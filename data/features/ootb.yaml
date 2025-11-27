@@ -1,0 +1,5 @@
+weight: 5
+name: "OOTB"
+icon: "far fa-envelope"
+url: ""
+description: "Everything just works &quot;Out Of The Box&quot;, without the need to configure anything or to install extra applications. It's ready to go. Although it's very configurable, everything is set and tuned nicely by default and no unnecessary questions are asked."

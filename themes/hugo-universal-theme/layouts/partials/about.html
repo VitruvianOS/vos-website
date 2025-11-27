@@ -1,0 +1,18 @@
+{{ if isset .Site.Params "about" }}
+{{ if .Site.Params.about.enable }}
+<section class="bar background-image-fixed-2 no-mb text-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="icon"><i class="{{ .Site.Params.about.icon }}"></i>
+                </div>
+                <h3 class="text-uppercase">{{ .Site.Params.about.title | markdownify }}</h3>
+                <p class="lead">{{ .Site.Params.about.subtitle | markdownify }}</p>
+                <p class="lead">{{ .Site.Params.about.subtitle2 | markdownify }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
