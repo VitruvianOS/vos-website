@@ -1,4 +1,4 @@
-baseurl = "https://be-linux.github.io/" # Configure URL. if using gh-pages https://github.com/<username>/hugo-universal-theme URL: https://<username>.github.io/hugo-universal-theme/
+baseurl = "https://vos.github.io/" # Configure URL. if using gh-pages https://github.com/<username>/hugo-universal-theme URL: https://<username>.github.io/hugo-universal-theme/
 title = "VitruvianOS"
 theme = "hugo-universal-theme"
 #themesDir = "../.."
@@ -70,7 +70,7 @@ pluralizelisttitles = false
 
 [params]
     viewMorePostLink = "/blog/"
-    #author = "DevCows"
+    author = "wdr"
     defaultKeywords = ["haiku", "linux", "vos"]
     mainSections = ["blog"]
     defaultDescription = "Vitruvian is the Operating System with the human at the center. "
