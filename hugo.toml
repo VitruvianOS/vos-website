@@ -1,4 +1,4 @@
-baseurl = "https://vos.github.io/" # Configure URL. if using gh-pages https://github.com/<username>/hugo-universal-theme URL: https://<username>.github.io/hugo-universal-theme/
+baseurl = "https://vitruvianos.github.io/" # Configure URL. if using gh-pages https://github.com/<username>/hugo-universal-theme URL: https://<username>.github.io/hugo-universal-theme/
 title = "VitruvianOS"
 theme = "hugo-universal-theme"
 #themesDir = "../.."
