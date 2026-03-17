@@ -1,5 +1,13 @@
-/* your styles go here */
-/* Example site test */
+/* VitruvianOS logo colors */
+.navbar-brand .vos-v   { color: #cc1111; }
+.navbar-brand .vos-mid { color: #1a1a1a; }
+.navbar-brand .vos-os  { color: #0055cc; }
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding-top: 12px;
+}
 
 .box-image-text .image {
     min-height: 190px;

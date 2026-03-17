@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <rect width="500" height="500" fill="#0d0d1a"/>
+  <text
+    x="250"
+    y="274"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif"
+    font-weight="700"
+    font-size="64"
+    letter-spacing="-0.5">
+    <tspan fill="#cc1111">V</tspan><tspan fill="#f0f0f0">itruvian</tspan><tspan fill="#4488ee">OS</tspan>
+  </text>
+</svg>

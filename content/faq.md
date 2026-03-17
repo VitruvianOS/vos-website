@@ -1,44 +1,42 @@
 +++
 title = "FAQ"
-description = "Frequently asked questions"
+description = "Frequently asked questions about VitruvianOS"
 type = "page"
-keywords = ["FAQ","How do I","questions","what if"]
+keywords = ["FAQ", "questions", "VitruvianOS"]
 +++
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+## What is VitruvianOS?
 
-## 1. WHAT TO DO IF I HAVE STILL NOT RECEIVED THE ORDER?
+VitruvianOS is an operating system based on Linux, inspired by BeOS. It brings the BeOS/Haiku API and desktop philosophy to modern hardware, running on a real-time patched Linux kernel.
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+## Is it based on Haiku?
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
+Not directly. VitruvianOS uses the Linux kernel and implements the BeOS/Haiku API compatibility layer on top of it. It is inspired by both BeOS and Haiku but is an independent project built from the ground up.
 
-## 2. WHAT ARE THE POSTAL RATES?
+## Can I run Haiku applications?
 
-Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+Yes. VitruvianOS is designed to support BeOS/Haiku application source code with minimal to no changes required.
 
-## 3. DO YOU SEND OVERSEAS?
+## What filesystems are supported?
 
-Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+The system currently boots from XFS or SquashFS, both with full extended attribute support. File system indexing and live queries are planned for a future release.
 
-## 4. WHY ARE YOU MORE EXPENSIVE THAN OTHERS?
+## Does it run on my hardware?
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+VitruvianOS targets x86-64 hardware. Modern PCs and laptops with at least 2 GB of RAM and 10 GB of disk space should work. Hardware support depends on the underlying Linux kernel drivers.
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
+## How do I get a copy?
 
-## 5. ANOTHER IMPORTANT QUESTION
+Nightly builds are available on the [Download](/download/) page. You can also build from source using the instructions in the [wiki](https://github.com/VitruvianOS/Vitruvian/wiki/Building).
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+## How do I get involved?
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
+Check the [GitHub repository](https://github.com/VitruvianOS/Vitruvian) for contribution guidelines and open issues, and join the discussion on [Telegram](https://t.me/vitruvian_official_chat).
+
+## Is VitruvianOS free?
+
+Yes. VitruvianOS is released under a hybrid GPL/MIT license and is completely free of cost.
 
 ---
 
-> In case you haven't found the answer for your question please feel free to contact us, our customer support will be happy to help you.
+> Have a question not listed here? Open an issue on [GitHub](https://github.com/VitruvianOS/Vitruvian/issues).
