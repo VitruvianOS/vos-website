@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "headers.html" . }}
+    {{ partial "custom_headers.html" . }}
+  </head>
+  <body>
+    <div id="all">
+      {{ partial "top.html" . }}
+      {{ partial "nav.html" . }}
+      {{ partial "breadcrumbs.html" . }}
+
+      <div id="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>{{ .Title }}</h1>
+
+              {{ $images := .Resources.ByType "image" }}
+              {{ $videos := .Resources.Match "*.{mp4,webm}" }}
+
+              {{ if and (eq (len $images) 0) (eq (len $videos) 0) }}
+              <p class="text-muted">No screenshots yet. Drop PNG, JPG, GIF, MP4 or WebM files into <code>content/screenshots/</code>.</p>
+              {{ else }}
+
+              <div class="vos-gallery">
+                {{ range $i, $img := $images }}
+                <a href="#gs-{{ $i }}" class="vos-gallery-thumb">
+                  <img src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}">
+                </a>
+                <div id="gs-{{ $i }}" class="vos-gallery-lightbox">
+                  <a href="#" class="vos-gallery-backdrop"></a>
+                  <div class="vos-gallery-content">
+                    <a href="#" class="vos-gallery-close">&times;</a>
+                    <img src="{{ $img.RelPermalink }}" alt="{{ $img.Title }}">
+                    {{ with $img.Title }}<p class="vos-gallery-caption">{{ . }}</p>{{ end }}
+                  </div>
+                </div>
+                {{ end }}
+
+                {{ range $videos }}
+                <div class="vos-gallery-thumb vos-gallery-video">
+                  <video src="{{ .RelPermalink }}" controls loop muted playsinline></video>
+                </div>
+                {{ end }}
+              </div>
+
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>
