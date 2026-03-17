@@ -1,0 +1,5 @@
+weight: 6
+name: "Nexus Kernel Bridge"
+icon: "fas fa-microchip"
+url: ""
+description: "Nexus is Vitruvian&#39;s custom Linux kernel subsystem that brings BeOS-style node monitoring, device tracking, and messaging to Linux — making it possible to run Haiku applications on a standard Linux kernel."

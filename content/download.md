@@ -19,11 +19,15 @@ Nightly images are the fastest way to follow current progress. They are built au
 
 Developers who want to contribute or explore the codebase can build the system from source:
 
-[Build Instructions](https://github.com/VitruvianOS/Vitruvian/wiki/Building)
+[Build Instructions](https://vos-wiki.vitruvian.test/docs/getting-started/building/)
+
+### Install
+
+See the [How To Install](https://vos-wiki.vitruvian.test/docs/getting-started/how-to-install/) guide for writing images to USB drives and first boot instructions.
 
 ### System Requirements
 
-- x86-64 processor
+- x86-64 processor (ARM and RISC-V support in progress)
 - 2 GB RAM minimum (4 GB recommended)
 - 10 GB disk space
 

@@ -6,15 +6,15 @@ tags = ["linux", "haiku", "kernel"]
 authors = ["VitruvianOS Team"]
 +++
 
-One of the core challenges in building VitruvianOS is bridging two worlds: the Linux kernel's POSIX model and the BeOS/Haiku API's distinct approach to system services — messaging, node monitoring, virtual filesystems, and more. This post gives a brief look at how we are approaching it.
+One of the core challenges in building V\OS is bridging two worlds: the Linux kernel's POSIX model and the BeOS/Haiku API's distinct approach to system services — messaging, node monitoring, virtual filesystems, and more. This post gives a brief look at how we are approaching it.
 
 ## The Kernel Bridge
 
-Rather than running a BeOS kernel, VitruvianOS implements the missing pieces as Linux kernel modules. The `nexus` module brings BeOS-style node monitoring to Linux's `fsnotify` subsystem, translating filesystem events into the `B_NODE_MONITOR` messages that Haiku applications expect. This allows Tracker, the file manager, to watch directories and respond to changes in real time — exactly as it would on native Haiku.
+Rather than running a BeOS kernel, Vitruvian implements the missing pieces as Linux kernel modules. The `nexus` module brings BeOS-style node monitoring to Linux's `fsnotify` subsystem, translating filesystem events into the `B_NODE_MONITOR` messages that Haiku applications expect. This allows Tracker, the file manager, to watch directories and respond to changes in real time — exactly as it would on native Haiku.
 
 ## Real-Time by Default
 
-The desktop ships with a `PREEMPT_RT` patched kernel. This is not just a checkbox — it makes a tangible difference in how responsive the system feels under load. UI events, audio, and I/O compete fairly rather than the interface getting starved behind background work.
+The Vitruvian desktop ships with a `PREEMPT_RT` patched kernel. This is not just a checkbox — it makes a tangible difference in how responsive the system feels under load. UI events, audio, and I/O compete fairly rather than the interface getting starved behind background work.
 
 ## API Compatibility
 
