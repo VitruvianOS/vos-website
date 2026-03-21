@@ -19,11 +19,11 @@ Nightly images are the fastest way to follow current progress. They are built au
 
 Developers who want to contribute or explore the codebase can build the system from source:
 
-[Build Instructions](https://vos-wiki.vitruvian.test/docs/getting-started/building/)
+[Build Instructions](https://wiki.v-os.dev/docs/getting-started/building/)
 
 ### Install
 
-See the [How To Install](https://vos-wiki.vitruvian.test/docs/getting-started/how-to-install/) guide for writing images to USB drives and first boot instructions.
+See the [How To Install](https://wiki.v-os.dev/docs/getting-started/how-to-install/) guide for writing images to USB drives and first boot instructions.
 
 ### System Requirements
 

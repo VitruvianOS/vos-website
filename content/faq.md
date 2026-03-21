@@ -27,7 +27,7 @@ Vitruvian targets x86-64 hardware. Modern PCs and laptops with at least 2 GB of 
 
 ## How do I get a copy?
 
-Nightly builds are available on the [Download](/download/) page. You can also build from source using the instructions in the [wiki](https://vos-wiki.vitruvian.test/docs/getting-started/building/).
+Nightly builds are available on the [Download](/download/) page. You can also build from source using the instructions in the [wiki](https://wiki.v-os.dev/docs/getting-started/building/).
 
 ## How do I get involved?
 
