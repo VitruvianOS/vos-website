@@ -131,8 +131,8 @@ pluralizelisttitles = false
     disabled_logo = false
     logo_text = "VitruvianOS"
 
-    logo = "img/logo.png"
-    logo_small = "img/logo.png"
+    logo = "img/vitruvianos-logo.svg"
+    logo_small = "img/vitruvianos-logo.svg"
     contact_url = "/contact"
 
 [permalinks]
