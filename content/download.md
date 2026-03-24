@@ -11,7 +11,7 @@ VitruvianOS is currently in active development. We will be providing pre-built i
 
 0.3.0 pilot release iso can be downloaded from the following link:
 
-[https://github.com/VitruvianOS/Vitruvian/releases/tag/0.3.0]
+[0.3.0](https://github.com/VitruvianOS/Vitruvian/releases/tag/0.3.0)
 
 ### Build from Source
 
