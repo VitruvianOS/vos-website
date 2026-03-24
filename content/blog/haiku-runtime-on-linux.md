@@ -4,6 +4,7 @@ date = "2025-02-10T00:00:00+00:00"
 categories = ["development"]
 tags = ["linux", "haiku", "kernel"]
 authors = ["VitruvianOS Team"]
+image = "../screenshots/stylededit.png"
 +++
 
 One of the core challenges in building V\OS is bridging two worlds: the Linux kernel's POSIX model and the BeOS/Haiku API's distinct approach to system services — messaging, node monitoring, virtual filesystems, and more. This post gives a brief look at how we are approaching it.
