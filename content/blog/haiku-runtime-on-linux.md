@@ -1,6 +1,6 @@
 +++
 title = "Building a Haiku Runtime on Linux — The Road So Far"
-date = "2025-02-10T00:00:00+00:00"
+date = "2026-02-10T00:00:00+00:00"
 categories = ["development"]
 tags = ["linux", "haiku", "kernel"]
 authors = ["VitruvianOS Team"]
