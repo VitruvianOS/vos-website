@@ -4,7 +4,7 @@ date = "2026-03-23T00:00:00+00:00"
 categories = ["announcement"]
 tags = ["release", "news", "0.3.0"]
 authors = ["VitruvianOS Team"]
-image = "/screenshots/just-before-0.3.png"
+image = "../content/screenshots/just-before-0.3.png"
 +++
 
 **VitruvianOS** — an operating system built on Linux that brings the elegance and simplicity of BeOS to modern hardware. After years of quiet development, we're thrilled to announce the first public release of VitruvianOS 0.3.0.
