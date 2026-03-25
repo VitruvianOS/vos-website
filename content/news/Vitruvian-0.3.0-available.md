@@ -13,10 +13,6 @@ This is a milestone moment—not just for us, but for everyone who's ever felt t
 
 ## What is VitruvianOS?
 
-VitruvianOS is an alternative Linux desktop with a singular philosophy: **the human at the center**.
-
-We take the elegance and user-friendliness of BeOS—a system that understood how to put humans first—and combine it with the power and universality of the Linux kernel. The result is a desktop that doesn't impose itself between you and your work, but instead *enables* it.
-
 Unlike traditional operating systems that prioritize features, services, and monetization, Vitruvian asks a different question: *what would I actually want to do with my computer that I currently can't?*
 
 It's that question that drives every design decision.
@@ -72,7 +68,7 @@ If you've always felt that your operating system was designed by committee to se
 
 We're a small team of three right now, but we're growing. We need developers, hardware enthusiasts, testers, and people with ideas. We need people who believe that computing should be different.
 
-Nightly and daily builds are available on our [Download](/download/) page. To get involved or ask questions, join us on [Telegram](https://t.me/vitruvian_official_chat) or open an issue on [GitHub](https://github.com/VitruvianOS/Vitruvian).
+Daily builds are available on our [Download](/download/) page. To get involved or ask questions, join us on [Telegram](https://t.me/vitruvian_official_chat) or open an issue on [GitHub](https://github.com/VitruvianOS/Vitruvian).
 
 We're building a full infrastructure—repositories, resources, documentation—and we need community support to do it properly. This isn't a corporate project backed by venture capital. It's built by people who care. If you'd like to support us, [donations](https://wiki.v-os.dev/docs/reference/donate/) are deeply appreciated.
 
@@ -80,18 +76,12 @@ We're building a full infrastructure—repositories, resources, documentation—
 
 What we've created isn't just a BeOS-compatible desktop—it's an entirely different approach to what a Linux desktop could be.
 
-Decades of desktop OS development have been constrained by the X server model and later by Wayland. But what if you could do something *different*? What if you could build a Linux desktop that prioritizes human connection over architectural purity?
+Decades of desktop OS development have been constrained by the X server model and later by Wayland. But what if you could do something *different*?
 
-That's Vitruvian.
-
-And we're just getting started.
+We're just getting started.
 
 ---
 
 **Download VitruvianOS 0.3.0**: [v-os.dev](/download/)
 
 **Join the community**: [Telegram](https://t.me/vitruvian_official_chat) | [GitHub](https://github.com/VitruvianOS/Vitruvian)
-
-**Support development**: [Donate](https://wiki.v-os.dev/docs/reference/donate/)
-
-Welcome to something different.
