@@ -7,15 +7,19 @@ keywords = ["FAQ", "questions", "Vitruvian"]
 
 ## What is VitruvianOS?
 
-Vitruvian is an operating system based on Linux, inspired by BeOS. It brings the BeOS/Haiku API and desktop philosophy to modern hardware, running on a real-time patched Linux kernel.
+Vitruvian is an operating system based on Linux, inspired by the BeOS. It brings the BeOS/Haiku API and desktop philosophy to modern hardware, running on a real-time patched Linux kernel.
 
 ## Is it based on Haiku?
 
-Not directly. Vitruvian uses the Linux kernel and implements the BeOS/Haiku API compatibility layer on top of it. It is inspired by both BeOS and Haiku but is an independent project built from the ground up.
+Partially. Vitruvian uses the Linux kernel and implements the BeOS/Haiku API compatibility layer on top of it. It is inspired by both BeOS and Haiku but is an independent project built from the ground up where we picked the best available open source components.
 
 ## Can I run BeOS/Haiku applications?
 
 Yes. V\OS is designed to support BeOS/Haiku application source code with minimal to no changes required.
+
+## Is it binary compatible with BeOS or Haiku?
+
+No. This should be implemented as a WINE-like layer, such as a runtime_loader port. We have strong source level compatibilty though which should be enough for the large majority of use cases.
 
 ## What filesystems are supported?
 
@@ -23,7 +27,7 @@ The reference boot filesystems are XFS and SquashFS, both with full extended att
 
 ## Does it run on my hardware?
 
-Vitruvian targets x86-64 hardware. Modern PCs and laptops with at least 2 GB of RAM and 10 GB of disk space should work. Hardware support depends on the underlying Linux kernel drivers.
+Vitruvian targets x86-64 hardware. Modern PCs and board with at least 1 GB of RAM and 1 GB of disk space. Hardware support depends on the underlying Linux kernel drivers.
 
 ## How do I get a copy?
 

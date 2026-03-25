@@ -5,7 +5,7 @@ type = "page"
 
 ## What is VitruvianOS?
 
-Vitruvian — also known as **V\OS** — is an operating system with the human at the center. Built on Linux and inspired by BeOS, it brings the elegance and simplicity of a classic operating system to modern hardware — without sacrificing the power and hardware support that Linux provides.
+Vitruvian — also known as **V\OS** — is the human-centric Operating System. Built on Linux and inspired by BeOS, it brings the elegance and simplicity of a classic operating system to modern hardware — without sacrificing the power and hardware support that Linux provides.
 
 Custom-built kernel modules and real-time patches deliver a responsive, low-latency desktop experience. The BeOS/Haiku API is supported on Linux with minimal to no changes required to application source code.
 
