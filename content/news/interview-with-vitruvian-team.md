@@ -12,7 +12,7 @@ banner = "screenshots/tracker-navigation.jpeg"
 Following our release announcement (link below), we're happy to share an
 interview with the Vitruvian founder about the project future and philosophy:
 
-[An interview with Dario Casalinuovo — From BeOS to VitruvianOS](https://www.desktoponfire.com/interviews/an-interview-with-dario-casalinuovo-from-beos-to-vitruvianos/)
+[An interview with Dario Casalinuovo — From BeOS to VitruvianOS](https://www.desktoponfire.com/interview/846/an-interview-with-dario-casalinuovo-from-beos-to-vitruvianos/)
 
 ---
 
