@@ -4,7 +4,7 @@ date = "2026-03-25T00:00:00+00:00"
 categories = ["announcement"]
 tags = ["interview", "release", "news", "0.3.0"]
 authors = ["VitruvianOS Team"]
-banner = "screenshots/just-before-0.3.png"
+banner = "screenshots/tracker-navigation.jpeg"
 +++
 
 ## Interview with the Vitruvian OS founder
