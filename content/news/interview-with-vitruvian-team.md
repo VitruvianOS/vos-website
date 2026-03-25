@@ -1,5 +1,5 @@
 +++
-title = "VitruvianOS 0.3.0"
+title = "VitruvianOS: Interview with the team"
 date = "2026-03-25T00:00:00+00:00"
 categories = ["announcement"]
 tags = ["interview", "release", "news", "0.3.0"]
