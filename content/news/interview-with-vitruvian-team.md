@@ -18,4 +18,5 @@ interview with the Vitruvian founder about the project future and philosophy:
 
 **Download VitruvianOS 0.3.0**: [v-os.dev](/download/)
 **VitruvianOS 0.3.0 Announcement**: [0.3.0](/news/vitruvian-0.3.0-available/)
+
 **Join the community**: [Telegram](https://t.me/vitruvian_official_chat) | [GitHub](https://github.com/VitruvianOS/Vitruvian)
