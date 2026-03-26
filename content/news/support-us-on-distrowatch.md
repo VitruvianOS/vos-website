@@ -4,7 +4,7 @@ date = "2026-03-26T00:00:00+00:00"
 categories = ["guide"]
 tags = ["distrowatch", "support"]
 authors = ["VitruvianOS Team"]
-banner = "img/vitruvianos-profile.png"
+banner = "img/distrowatch_full.jpg"
 +++
 
 If you like Vitruvian, you can help it out in just a few seconds.
