@@ -1,8 +1,8 @@
 +++
-title = "VitruvianOS 0.3.0"
+title = "VitruvianOS 0.3.1"
 date = "2026-04-01T00:00:00+00:00"
 categories = ["announcement"]
-tags = ["release", "news", "0.3.0"]
+tags = ["release", "news", "0.3.1"]
 authors = ["VitruvianOS Team"]
 banner = "screenshots/goodoldshot.jpg"
 +++
