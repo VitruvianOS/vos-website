@@ -4,7 +4,7 @@ date = "2026-04-01T00:00:00+00:00"
 categories = ["announcement"]
 tags = ["release", "news", "0.3.1"]
 authors = ["VitruvianOS Team"]
-banner = "screenshots/goodoldshot.jpg"
+banner = "screenshots/mandelbrot.jpg"
 +++
 
 As promised we are pleased to announce the release of Vitruvian OS 0.3.1.
