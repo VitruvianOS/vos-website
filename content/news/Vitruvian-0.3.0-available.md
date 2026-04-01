@@ -7,21 +7,15 @@ authors = ["VitruvianOS Team"]
 banner = "screenshots/just-before-0.3.png"
 +++
 
-**VitruvianOS** — an operating system built on Linux that brings the elegance and simplicity of BeOS to modern hardware. After years of quiet development, we're thrilled to announce the first public release of VitruvianOS 0.3.0.
+**VitruvianOS** — is an operating system built on Linux that is inspired by the BeOS. After years of quiet development, we're thrilled to announce the first public release of VitruvianOS 0.3.0.
 
-This is a milestone moment—not just for us, but for everyone who's ever felt that modern operating systems were designed for anything but the actual humans using them.
-
-## What is VitruvianOS?
-
-Unlike traditional operating systems that prioritize features, services, and monetization, Vitruvian asks a different question: *what would I actually want to do with my computer that I currently can't?*
-
-Vitruvian is not an operating system like others.
+This is a milestone moment—not just for us.
 
 ## Why Now?
 
 We started the first experiments in 2019, but the first announcement was more of a quiet signal to the few people who might care.
 
-Porting a BeOS-compatible runtime on top of Linux isn't like repackaging existing tools. We built the entire infrastructure from scratch—a sophisticated layer that allows the Tracker, Deskbar, and the rest of the Vitruvian experience to run as fully native Linux applications. Our nexus system serves the same role that the binder does on Android: it's the connective tissue that makes everything work.
+Porting a BeOS-compatible runtime on top of Linux isn't like repackaging existing tools. We built the entire infrastructure from scratch—a sophisticated layer that allows the Tracker, Deskbar, and the rest of the Vitruvian experience to run as fully native Linux applications.
 
 ## What Works Today
 
@@ -31,20 +25,16 @@ Porting a BeOS-compatible runtime on top of Linux isn't like repackaging existin
 - Real-time patched Linux kernel for low-latency desktop use
 - BeOS/Haiku API compatibility layer with native application support
 - Deskbar, Tracker, and core Vitruvian desktop components
-- Input system with support for mice, gestures, tablets, and more
+- Basi Input system support (what we need for testing at the moment)
 - Purpose-built graphics layer (neither X nor Wayland)
 
 ## The Road Ahead
-
-This isn't the end. It's the beginning.
 
 **0.3.1** (coming soon) will include many missing components and bug fixes based on early feedback.
 
 **0.3.2** will bring us closer to a self-hosting system where Vitruvian can build itself.
 
 **0.4** will mark our entry into genuine stability and broader hardware support, including our ongoing ARM port.
-
-Beyond that, a fully working keymap system, and refined user experience.
 
 ## Who Should Use This?
 
