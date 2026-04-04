@@ -1,6 +1,6 @@
 +++
 title = "VitruvianOS 0.3.2"
-ate = "2026-04-04T00:00:00+00:00"
+date = "2026-04-04T00:00:00+00:00"
 categories = ["announcement"]
 tags = ["release", "news", "0.3.2]
 authors = ["VitruvianOS Team"]
