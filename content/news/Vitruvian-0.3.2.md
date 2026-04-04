@@ -2,7 +2,7 @@
 title = "VitruvianOS 0.3.2"
 date = "2026-04-04T00:00:00+00:00"
 categories = ["announcement"]
-tags = ["release", "news", "0.3.2]
+tags = ["release", "news", "0.3.2"]
 authors = ["VitruvianOS Team"]
 banner = "screenshots/diskprobe.jpg"
 +++
