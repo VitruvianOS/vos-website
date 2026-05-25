@@ -28,6 +28,23 @@
 .ur-slide__media img {
     object-fit: contain;
     object-position: center;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+.ur-slide__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer centering */
+.ur-footer__grid {
+    text-align: center;
+    justify-content: center;
+}
+.ur-footer__col {
+    text-align: center;
 }
 
 /* Screenshots gallery */
