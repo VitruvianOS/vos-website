@@ -58,7 +58,7 @@ pluralizelisttitles = false
 [[menu.main]]
     name       = "Donate"
     identifier = "menu.donate"
-    url        = "https://wiki.v-os.dev/docs/reference/donate/"
+    url        = "/donate/"
     weight     = 7
 
 [[menu.main]]
