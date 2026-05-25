@@ -3,19 +3,19 @@ title = "Download"
 type = "page"
 +++
 
-## Download Vitruvian
+## Download VitruvianOS
 
-VitruvianOS is currently in active development. We will be providing pre-built images generated automatically from the latest source soon.
+### Latest Release
 
-### 0.3.0
+The current release is always available from GitHub:
 
-0.3.0 pilot release iso can be downloaded from the following link:
+[Download latest release](https://github.com/VitruvianOS/Vitruvian/releases/latest)
 
-[0.3.0](https://github.com/VitruvianOS/Vitruvian/releases/tag/0.3.0)
+Release notes for each version are on the [Releases](/releases/) page.
 
 ### Build from Source
 
-Developers who want to contribute or explore the codebase can build the system from source:
+To build the system from source, follow the instructions in the wiki:
 
 [Build Instructions](https://wiki.v-os.dev/docs/getting-started/building/)
 
@@ -25,10 +25,10 @@ See the [How To Install](https://wiki.v-os.dev/docs/getting-started/how-to-insta
 
 ### System Requirements
 
-- x86-64 processor (ARM and RISC-V support in progress)
+- x86-64 processor (ARM and RISC-V in progress)
 - 1 GB RAM minimum (4 GB recommended)
 - 1 GB disk space
 
 ### Getting Help
 
-If you run into issues, open a ticket on [GitHub Issues](https://github.com/VitruvianOS/Vitruvian/issues) or ask in the [Telegram chat](https://t.me/vitruvian_official_chat).
+If something breaks, open a ticket on [GitHub Issues](https://github.com/VitruvianOS/Vitruvian/issues) or ask in the [Telegram chat](https://t.me/vitruvian_official_chat).

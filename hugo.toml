@@ -38,28 +38,34 @@ pluralizelisttitles = false
     weight     = 3
 
 [[menu.main]]
+    name       = "Releases"
+    identifier = "menu.releases"
+    url        = "/releases/"
+    weight     = 4
+
+[[menu.main]]
     name       = "Download"
     identifier = "menu.download"
     url        = "/download/"
-    weight     = 4
+    weight     = 5
 
 [[menu.main]]
     name       = "About"
     identifier = "menu.about"
     url        = "/about/"
-    weight     = 5
+    weight     = 6
 
 [[menu.main]]
     name       = "Screenshots"
     identifier = "menu.screenshots"
     url        = "/screenshots/"
-    weight     = 6
+    weight     = 7
 
 [[menu.main]]
     name       = "Wiki"
     identifier = "menu.wiki"
     url        = "https://wiki.v-os.dev"
-    weight     = 7
+    weight     = 8
 
 # Top bar social links menu
 
@@ -80,8 +86,8 @@ pluralizelisttitles = false
     viewMorePostLink = "/blog/"
     author = "wdr"
     defaultKeywords = ["haiku", "linux", "vos"]
-    mainSections = ["blog", "news"]
-    defaultDescription = "Vitruvian is the human-centric Operating System. "
+    mainSections = ["blog", "news", "releases"]
+    defaultDescription = "Vitruvian is the human-centric Operating System."
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
     style = "blue"
@@ -120,7 +126,7 @@ pluralizelisttitles = false
     enableRecaptchaInContactForm = false
     googleRecaptchaKey = "site_key_for_google_recaptcha"
 
-    about_us = "<p>Vitruvian is the human-centric Operating System.</p>"
+    about_us = "<p>VitruvianOS — a BeOS-inspired desktop on Linux.</p>"
     copyright = "Copyright (c) 2018 - 2025, The Vitruvian Project; all rights reserved."
 
     # Format dates with Go's time formatting
@@ -136,7 +142,7 @@ pluralizelisttitles = false
     contact_url = "/contact"
 
 [permalinks]
-    blog = "/blog/:year/:month/:day/:contentbasename/"
+    blog = "/blog/:year/:month/:day/:slug/"
 
 # Enable or disable top bar with social icons
 [params.topbar]
@@ -185,23 +191,23 @@ pluralizelisttitles = false
     enable = true
     #icon = "far fa-file-alt"
     title = "What is VitruvianOS?"
-    subtitle = "V&#92;OS is an operating system based on linux heavily inspired by the BeOS, bringing the elegance and simplicity of a classic operating system to modern days. By leveraging the strengths of Linux while maintaining the user-friendly aspects of BeOS, V&#92;OS offers a unique blend of performance and usability. V&#92;OS leverages the power of linux by integrating ad-hoc built kernel modules and real time patches for a reactive and enjoyable user experience. V&#92;OS supports the BeOS/Haiku runtime on Linux with minimal to no API changes."
-    subtitle2 = "The boot file systems supported are XFS and SquashFS including support for extended attributes. File system indexing, live queries, and multiuser support with graphical login are planned to be released in upcoming versions. By default the system ships a linux kernel including real time patches while at the same time providing support for non-rt linux kernels."
+    subtitle = "V&#92;OS is a Linux-based operating system inspired by BeOS. It brings the simplicity and responsiveness of a classic desktop to modern hardware — custom kernel modules, real-time patches, and a BeOS/Haiku API compatibility layer that runs on Linux with minimal to no source changes."
+    subtitle2 = "The reference boot filesystems are XFS and SquashFS, both with extended attribute support. Filesystem indexing, live queries, and multiuser graphical login are on the roadmap. The default kernel ships with PREEMPT_RT patches; non-RT kernels also work."
 
 [params.see_more]
     enable = true
     icon = "far fa-file-alt"
-    title = "Have any questions?"
-    title2 = "You can join our groups."
-    subtitle = "If you have questions, ideas, or want to contribute, you can join us on [GitHub](https://github.com/VitruvianOS/Vitruvian) and [Telegram](https://t.me/vitruvian_official_chat)."
+    title = "Questions?"
+    title2 = "Come talk to us."
+    subtitle = "Questions, ideas, want to contribute? Head over to [GitHub](https://github.com/VitruvianOS/Vitruvian) or join the [Telegram group](https://t.me/vitruvian_official_chat)."
     link_url = "https://wiki.v-os.dev/docs/getting-started/faq/"
     link_text = "Read FAQs"
 
 
 [params.recent_posts]
     enable = true
-    title = "From our blog"
-    subtitle = "Latest news"
+    title = "Latest posts"
+    subtitle = "News, releases, and development updates"
     hide_summary = true
 
 [params.footer.recent_posts]
