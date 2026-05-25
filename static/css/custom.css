@@ -43,11 +43,10 @@
 
 /* Footer centering */
 .ur-footer__grid {
-    text-align: center;
     justify-content: center;
 }
 .ur-footer__col {
-    text-align: center;
+    text-align: left;
 }
 
 /* Screenshots gallery */
