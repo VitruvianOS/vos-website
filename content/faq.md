@@ -27,11 +27,11 @@ The reference boot filesystems are XFS and SquashFS, both with full extended att
 
 ## Does it run on my hardware?
 
-Vitruvian targets x86-64 hardware. Modern PCs and board with at least 1 GB of RAM and 1 GB of disk space. Hardware support depends on the underlying Linux kernel drivers.
+Vitruvian targets x86-64 hardware. Modern PCs and boards with at least 512 MB of RAM and 1 GB of disk space. Hardware support depends on the underlying Linux kernel drivers.
 
 ## How do I get a copy?
 
-Nightly builds are available on the [Download](/download/) page. You can also build from source using the instructions in the [wiki](https://wiki.v-os.dev/docs/getting-started/building/).
+Releases are available on the [Download](/download/) page. You can also build from source using the instructions in the [wiki](https://wiki.v-os.dev/docs/getting-started/building/).
 
 ## How do I get involved?
 
