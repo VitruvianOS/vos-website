@@ -1,0 +1,29 @@
+- text: "I migrated from a Webflow site that cost $39 a month. Universal Reborn ships the same polish — only *I own the source*. Three weekends in, my agency runs on it."
+  name: "Maya Okafor"
+  position: "Principal, Halden Studio"
+  avatar: ""
+
+- text: "We replaced four plugins and a page builder. The site loads instantly, the team can edit Markdown, and our designer stopped sending angry Figma comments."
+  name: "Daniel Reyes"
+  position: "Founder, Northbound Press"
+  avatar: ""
+
+- text: "The dark mode is the first one I've seen that isn't just inverted hex codes. Warm neutrals, proper contrast — it reads like the light version, not a knock-off."
+  name: "Anya Kowalski"
+  position: "Art Director, Fieldnotes"
+  avatar: ""
+
+- text: "Twelve sections in one TOML file. I configured the whole site on the train home. No build pipeline, no framework wars — just content out the door."
+  name: "Tomás Vidal"
+  position: "Independent designer"
+  avatar: ""
+
+- text: "Our content team stopped centering every paragraph just because they could. It made our blog *twice as readable* overnight."
+  name: "Priya Shankar"
+  position: "Editor-in-chief, Praxis"
+  avatar: ""
+
+- text: "Switched from a paid template last quarter. Migration took an afternoon; our Lighthouse score went from 72 to 99."
+  name: "Henrik Larsen"
+  position: "CTO, Carbide Type Co."
+  avatar: ""

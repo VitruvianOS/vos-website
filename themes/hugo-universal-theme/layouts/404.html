@@ -1,43 +1,27 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-
   <head>
     {{ partial "headers.html" . }}
     {{ partial "custom_headers.html" . }}
   </head>
-
-  <body>
-
+  <body class="page-404">
     <div id="all">
+      {{ partial "top.html" . }}
+      {{ partial "nav.html" . }}
 
-        {{ partial "top.html" . }}
-
-        {{ partial "nav.html" . }}
-
-        <div id="content">
-            <div class="container">
-
-                <div class="col-sm-6 col-sm-offset-3" id="error-page">
-
-                    <div class="box">
-
-                        <h3>{{ i18n "404Message" | markdownify }}</h3>
-                        <h4 class="text-muted">{{ i18n "404Error" | markdownify }}</h4>
-
-                        <p class="buttons"><a href="{{ "/" | relURL }}" class="btn btn-template-main"><i class="fas fa-home"></i> {{ i18n "404NavHome" | markdownify }}</a>
-                        </p>
-                    </div>
-
-
-                </div>
-                <!-- /.col-sm-6 -->
-            </div>
-            <!-- /.container -->
+      <section class="ur-bar ur-404">
+        <div class="ur-wrap ur-404__inner">
+          <div class="ur-404__num">404</div>
+          <h1 class="ur-404__title">{{ i18n "404title" | default "We couldn't find that page." }}</h1>
+          <p class="ur-lead">{{ i18n "404body" | default "The link may be broken, or the page may have moved. Try the homepage, or search the docs." }}</p>
+          <div class="ur-404__actions">
+            <a class="ur-btn ur-btn--lg" href="{{ "/" | relLangURL }}">{{ i18n "backToHome" | default "Back to home" }}</a>
+          </div>
         </div>
-        <!-- /#content -->
+      </section>
 
-        {{ partial "footer.html" . }}
-
+      {{ partial "footer.html" . }}
     </div>
+    {{ partial "scripts.html" . }}
   </body>
 </html>

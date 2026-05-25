@@ -1,0 +1,214 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Universal Reborn"
+theme = "hugo-universal-reborn"
+defaultContentLanguage = "en"
+pluralizeListTitles = false
+enableRobotsTXT = true
+paginate = 9
+
+[params]
+  # Theme variant — maps to /static/css/style.<name>.css
+  # Options: default | blue | green | marsala | pink | red | turquoise | violet
+  style = "default"
+
+  # Boot site in dark mode if the user's OS prefers it
+  respectSystemDarkMode = true
+  # Show the dark-mode toggle in the nav
+  darkModeToggle = true
+
+  logo            = "img/logo.png"
+  logo_small      = "img/logo-small.png"
+  disabled_logo   = true     # set false to use logo files instead of text
+  logo_text       = "Universal"
+
+  author          = "Universal Studio"
+  defaultDescription = "A clean, fast, modern Hugo theme — refreshed from the original Universal."
+  defaultKeywords = ["hugo", "theme", "universal", "business"]
+  mainSections    = ["blog"]
+  date_format     = "January 2, 2006"
+
+  copyright       = "© 2026 Universal Reborn — MIT licensed."
+
+  about_us = """
+  <p>Universal Reborn is a clean, modern refresh of the classic Universal Hugo theme — same configuration schema, fresh design, dark mode, and a lighter footprint.</p>
+  """
+
+  address = """
+  <p style="text-transform:uppercase; letter-spacing:0.04em; font-size:13px;">
+    <strong style="color:var(--bg);">Universal Ltd.</strong><br>
+    13/25 New Avenue<br>
+    Newtown upon River<br>
+    45Y 73J · England
+  </p>
+  """
+
+  [params.topbar]
+    enable = true
+    text   = '<i class="fas fa-phone" style="color:var(--primary-accent); margin-right:6px;"></i> +420 777 555 333 &nbsp;·&nbsp; <i class="fas fa-envelope" style="color:var(--primary-accent); margin: 0 6px 0 4px;"></i> hello@universal.com'
+
+  [params.cta]
+    text = "Get started"
+    url  = "/contact"
+
+  [params.search]
+    enable = true
+    url    = "/search"
+
+  [params.CarouselHomepage]
+    enable = true
+    auto_play = true
+    slide_speed = 6500
+
+  [params.features]
+    enable   = true
+    cols     = 3
+    eyebrow  = "What we offer"
+    title    = "Our services"
+    subtitle = "Six modules ship in the box. Each is configurable from one YAML file — no theme forking required."
+
+  [params.about]
+    enable    = true
+    icon      = "fas fa-heart"
+    title     = "A theme built with care."
+    subtitle  = "Universal Reborn keeps everything the original could do, drops the legacy weight, and adds dark mode and a modern layout system."
+    subtitle2 = "Open source. MIT licensed. Maintained since 2017."
+
+  [params.testimonials]
+    enable   = true
+    eyebrow  = "From the field"
+    title    = "What folks said"
+    subtitle = "Five years of feedback from people running real sites on this theme. Verbatim, with names attached."
+
+  [params.CarouselTestimonials]
+    items = 3
+    auto_play = true
+    slide_speed = 8000
+
+  [params.see_more]
+    enable     = true
+    icon       = "fas fa-file-alt"
+    title      = "Do you want to see more?"
+    title2     = "Forty pages, one config."
+    subtitle   = "Homepage, blog, portfolio, shop, contact, docs, 404, single, list, archives, tag clouds, RSS — pre-styled, ready for content."
+    link_text  = "Check other homepages"
+    link_url   = "#"
+    link2_text = "Browse all pages"
+    link2_url  = "#"
+
+  [params.recent_posts]
+    enable       = true
+    cols         = 4
+    count        = 4
+    eyebrow      = "From the journal"
+    title        = "From our blog"
+    subtitle     = "Release notes, design decisions, and the occasional opinion piece. Updated as we ship."
+    hide_summary = false
+
+  [params.clients]
+    enable   = true
+    eyebrow  = "Trusted by"
+    title    = "Our partners"
+    subtitle = "Fifty thousand sites ship with Universal. Here are a few you might recognise."
+
+  [params.CarouselCustomers]
+    items = 6
+
+  [params.stats]
+    enable = true
+
+  [params.newsletter]
+    enable      = true
+    pitch       = "Newsletter — one release note per quarter."
+    placeholder = "you@studio.com"
+    button      = "Subscribe"
+    url         = "#"
+
+  [params.footer.recent_posts]
+    enable = true
+
+# ─── Menus ───────────────────────────────────────────────────────────────────
+
+[[menu.main]]
+  identifier = "home"
+  name       = "Home"
+  url        = "/"
+  weight     = 1
+
+[[menu.main]]
+  identifier = "blog"
+  name       = "Blog"
+  url        = "/blog/"
+  weight     = 2
+
+[[menu.main]]
+  identifier = "pages"
+  name       = "Pages"
+  url        = "#"
+  weight     = 3
+[[menu.main]]
+  parent     = "pages"
+  name       = "About"
+  url        = "/about/"
+  weight     = 1
+[[menu.main]]
+  parent     = "pages"
+  name       = "Services"
+  url        = "/services/"
+  weight     = 2
+[[menu.main]]
+  parent     = "pages"
+  name       = "Pricing"
+  url        = "/pricing/"
+  weight     = 3
+[[menu.main]]
+  parent     = "pages"
+  name       = "FAQ"
+  url        = "/faq/"
+  weight     = 4
+
+[[menu.main]]
+  identifier = "contact"
+  name       = "Contact"
+  url        = "/contact/"
+  weight     = 4
+
+[[menu.topbar]]
+  pre  = '<i class="fab fa-github"></i>'
+  name = "GitHub"
+  url  = "https://github.com/devcows/hugo-universal-theme"
+[[menu.topbar]]
+  pre  = '<i class="fab fa-x-twitter"></i>'
+  name = "Twitter"
+  url  = "https://twitter.com"
+[[menu.topbar]]
+  pre  = '<i class="fab fa-linkedin"></i>'
+  name = "LinkedIn"
+  url  = "https://linkedin.com"
+
+[[menu.footer]]
+  name = "Documentation"
+  url  = "/docs/"
+  weight = 1
+[[menu.footer]]
+  name = "Showcase"
+  url  = "/showcase/"
+  weight = 2
+[[menu.footer]]
+  name = "Changelog"
+  url  = "/changelog/"
+  weight = 3
+[[menu.footer]]
+  name = "GitHub"
+  url  = "https://github.com/devcows/hugo-universal-theme"
+  weight = 4
+
+[[menu.footer_social]]
+  pre  = '<i class="fab fa-github"></i>'
+  url  = "https://github.com"
+[[menu.footer_social]]
+  pre  = '<i class="fab fa-x-twitter"></i>'
+  url  = "https://twitter.com"
+[[menu.footer_social]]
+  pre  = '<i class="fab fa-discord"></i>'
+  url  = "https://discord.com"

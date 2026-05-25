@@ -1,76 +1,51 @@
 {{ if isset .Site.Params "recent_posts" }}
 {{ if .Site.Params.recent_posts.enable }}
-<section class="bar background-white no-mb">
-    <div class="container">
-
-        <div class="col-md-12">
-            <div class="heading text-center">
-                <h2>{{ .Site.Params.recent_posts.title | markdownify }}</h2>
-            </div>
-
-            <p class="lead">
-              {{ .Site.Params.recent_posts.subtitle | markdownify }}
-            </p>
-
-            <!-- *** BLOG HOMEPAGE *** -->
-
-            <div class="row">
-                {{ $posts := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-                {{ range first 4 $posts.Pages }}
-                <div class="col-md-3 col-sm-6">
-                    <div class="box-image-text blog">
-                        <div class="top">
-                            <div class="image" style="overflow:hidden">
-                                {{ if isset .Params "banner" }}
-                                <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="" />
-                                {{ else }}
-                                <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="" />
-                                {{ end }}
-                            </div>
-                            <div class="bg"></div>
-                            <div class="text">
-                                <p class="buttons">
-                                    <a href="{{ .Permalink }}" class="btn btn-template-transparent-primary"><i class="fas fa-link"></i> {{ i18n "readMore" }}</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="content">
-                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-                            <p class="author-category">
-			    {{ if isset .Params "authors" }}
-			      {{ i18n "authorBy" }} {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<a href="{{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }}">{{ $author }}</a>{{ end }}
-                            {{ end }}
-                            {{ if .Params.date }}
-                                {{ $createdAt := .Date.Format .Site.Params.date_format }}
-                                {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
-                                    {{ $createdAt = replace $createdAt $month (i18n $month) }}
-                                {{ end }}
-                                {{ i18n "publishedOn" }} {{ $createdAt }}
-                            {{ end }}
-                            </p>
-                            {{ if not .Site.Params.recent_posts.hide_summary }}
-                            <p class="intro">{{ .Summary }}</p>
-                            <p class="read-more">
-                              <a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
-                            </p>
-                            {{ end }}
-                        </div>
-                    </div>
-                    <!-- /.box-image-text -->
-
-                </div>
-                {{ end }}
-
-            </div>
-            <!-- /.row -->
-
-            <!-- *** BLOG HOMEPAGE END *** -->
-
-        </div>
+<section class="ur-bar ur-bar--white ur-posts">
+  <div class="ur-wrap">
+    <div class="ur-heading">
+      {{ with .Site.Params.recent_posts.eyebrow }}<span class="ur-heading__eyebrow">{{ . }}</span>{{ end }}
+      <h2 class="ur-heading__title">{{ .Site.Params.recent_posts.title | markdownify }}</h2>
     </div>
-    <!-- /.container -->
+    {{ with .Site.Params.recent_posts.subtitle }}<p class="ur-lead">{{ . | markdownify }}</p>{{ end }}
+
+    {{ $count := default 4 .Site.Params.recent_posts.count }}
+    {{ $posts := first $count (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    {{ $cols := default 4 .Site.Params.recent_posts.cols }}
+
+    <div class="ur-posts__grid ur-posts__grid--{{ $cols }}">
+      {{ range $posts }}
+      <article class="ur-post">
+        <a class="ur-post__media" href="{{ .Permalink }}" aria-label="{{ .Title }}">
+          {{ if isset .Params "banner" }}
+            <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" loading="lazy" />
+          {{ else }}
+            <span class="ur-post__placeholder" aria-hidden="true"></span>
+          {{ end }}
+          {{ with (index .Params.categories 0) }}<span class="ur-post__cat">{{ . }}</span>{{ end }}
+        </a>
+        <div class="ur-post__body">
+          <h3 class="ur-post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <p class="ur-post__meta">
+            {{ if isset .Params "authors" }}
+              <span><i class="far fa-user" aria-hidden="true"></i> {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<a href="{{ printf "%s/%s" ("authors" | relLangURL) ($author | urlize) }}">{{ $author }}</a>{{ end }}</span>
+            {{ end }}
+            {{ if .Params.date }}
+              {{ $createdAt := .Date.Format .Site.Params.date_format }}
+              {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
+                {{ $createdAt = replace $createdAt $month (i18n $month) }}
+              {{ end }}
+              <span><i class="far fa-calendar" aria-hidden="true"></i> {{ $createdAt }}</span>
+            {{ end }}
+          </p>
+          {{ if not .Site.Params.recent_posts.hide_summary }}
+            <p class="ur-post__summary">{{ .Summary | plainify | truncate 140 }}</p>
+          {{ end }}
+          <a class="ur-post__read" href="{{ .Permalink }}">{{ i18n "continueReading" | default "Continue reading" }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
 </section>
-<!-- /.bar -->
 {{ end }}
 {{ end }}

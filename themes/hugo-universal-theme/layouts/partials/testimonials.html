@@ -2,53 +2,41 @@
 {{ if .Site.Params.testimonials.enable }}
 {{ if isset .Site.Data "testimonials" }}
 {{ if gt (len .Site.Data.testimonials) 0 }}
-<section class="bar background-pentagon no-mb">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="heading text-center">
-                    <h2>{{ .Site.Params.testimonials.title }}</h2>
-                </div>
-
-                <p class="lead">
-                  {{ .Site.Params.testimonials.subtitle | markdownify }}
-                </p>
-
-                <!-- *** TESTIMONIALS CAROUSEL *** -->
-
-                <ul class="owl-carousel testimonials same-height-row"
-                    data-items="{{ default 4 .Site.Params.CarouselTestimonials.items }}"
-                    data-autoplay="{{ default false .Site.Params.CarouselTestimonials.auto_play }}"
-                    data-slide-speed="{{ default 2000 .Site.Params.CarouselTestimonials.slide_speed }}"
-                    data-pagination-speed="{{ default 1000 .Site.Params.CarouselTestimonials.pagination_speed }}">
-                    {{ range .Site.Data.testimonials }}
-                    <li class="item">
-                        <div class="testimonial same-height-always">
-                            <div class="text">
-                                <p>{{ .text | markdownify }}</p>
-                            </div>
-                            <div class="bottom">
-                                <div class="icon"><i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="name-picture">
-                                    <img class="" alt="" src="{{ .avatar | absURL }}">
-                                    <h5>{{ .name }}</h5>
-                                    <p>{{ .position }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    {{ end }}
-                </ul>
-                <!-- /.owl-carousel -->
-
-                <!-- *** TESTIMONIALS CAROUSEL END *** -->
-            </div>
-
-        </div>
+<section class="ur-bar ur-bar--gray ur-testimonials">
+  <div class="ur-wrap">
+    <div class="ur-heading">
+      {{ with .Site.Params.testimonials.eyebrow }}<span class="ur-heading__eyebrow">{{ . }}</span>{{ end }}
+      <h2 class="ur-heading__title">{{ .Site.Params.testimonials.title }}</h2>
     </div>
+    {{ with .Site.Params.testimonials.subtitle }}<p class="ur-lead">{{ . | markdownify }}</p>{{ end }}
+
+    {{ $per := default 3 .Site.Params.CarouselTestimonials.items }}
+    <div class="ur-testimonials__rail"
+         data-per="{{ $per }}"
+         data-autoplay="{{ default true .Site.Params.CarouselTestimonials.auto_play }}"
+         data-interval="{{ default 8000 .Site.Params.CarouselTestimonials.slide_speed }}">
+      <ul class="ur-testimonials__list" id="ur-tests">
+        {{ range .Site.Data.testimonials }}
+        <li class="ur-testimonial">
+          <p class="ur-testimonial__text">{{ .text | markdownify }}</p>
+          <footer class="ur-testimonial__person">
+            {{ if .avatar }}
+              <img class="ur-testimonial__avatar" src="{{ .avatar | absURL }}" alt="{{ .name }}" loading="lazy" />
+            {{ else }}
+              <span class="ur-testimonial__avatar ur-testimonial__avatar--mono">{{ substr .name 0 1 }}</span>
+            {{ end }}
+            <div>
+              <div class="ur-testimonial__name">{{ .name }}</div>
+              <div class="ur-testimonial__pos">{{ .position }}</div>
+            </div>
+          </footer>
+        </li>
+        {{ end }}
+      </ul>
+      <div class="ur-testimonials__pager" id="ur-tests-pager" role="tablist"></div>
+    </div>
+  </div>
 </section>
-<!-- /.bar -->
 {{ end }}
 {{ end }}
 {{ end }}

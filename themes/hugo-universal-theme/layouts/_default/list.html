@@ -1,128 +1,62 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-
   <head>
     {{ partial "headers.html" . }}
     {{ partial "custom_headers.html" . }}
   </head>
-
-  <body>
-
+  <body class="list list-{{ .Type }}">
     <div id="all">
+      {{ partial "top.html" . }}
+      {{ partial "nav.html" . }}
 
-        {{ partial "top.html" . }}
-
-        {{ partial "nav.html" . }}
-
-        {{ partial "breadcrumbs.html" . }}
-
-        <div id="content">
-            <div class="container">
-                <div class="row">
-                    <!-- *** LEFT COLUMN *** -->
-
-                    <div class="col-md-9" id="blog-listing-medium">
-
-                        {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.mainSections) }}
-                        {{ range $paginator.Pages }}
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="{{ .Permalink }}">
-                                          {{ if .Params.banner }}
-                                          <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="" />
-                                          {{ else }}
-                                          <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="" />
-                                          {{ end }}
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          {{ if isset .Params "authors" }}
-					  {{ i18n "authorBy" }} {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<a href="{{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }}">{{ $author }}</a>{{ end }}
-                                          {{ end }}
-                                          {{ if isset .Params "categories" }}
-                                          {{ if gt (len .Params.categories) 0 }}
-                                          in 
-                                          {{ range $index, $category := .Params.categories }}{{ if $index }}, {{ end }}
-                                              <a href="{{ "categories/" | relLangURL }}{{ . | urlize | lower }}">{{ $category }}</a>{{ end }}
-                                          {{ end }}
-                                          {{ end }}
-
-                                        </p>
-                                        {{ if isset .Params "date" }}
-
-                                        {{ $createdAt := .Date.Format .Site.Params.date_format }}
-                                        {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
-                                            {{ $createdAt = replace $createdAt $month (i18n $month) }}
-                                        {{ end }}
-
-                                        <p class="date-comments">
-                                            <a href="{{ .Permalink }}"><i class="far fa-calendar"></i> {{ $createdAt }}</a>
-                                        </p>
-                                        {{ end }}
-                                    </div>
-                                    {{ if not .Site.Params.recent_posts.hide_summary }}
-                                    <p class="intro">{{ .Summary }}</p>
-                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
-                                    </p>
-                                    {{ end }}
-                                </div>
-                            </div>
-                        </section>
-                        {{ end }}
-
-                        <ul class="pager">
-                            {{ if .Paginator.HasPrev }}
-                            <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}">&larr; {{ i18n "newer" }}</a></li>
-                            {{ else }}
-                            <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
-                            {{ end }}
-
-                            {{ if .Paginator.HasNext }}
-                            <li class="next"><a href="{{ .Paginator.Next.URL | relURL }}">{{ i18n "older" }} &rarr;</a></li>
-                            {{ else }}
-                            <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
-                            {{ end }}
-                        </ul>
-                    </div>
-                    <!-- /.col-md-9 -->
-
-                    <!-- *** LEFT COLUMN END *** -->
-
-                    <!-- *** RIGHT COLUMN ***
-       _________________________________________________________ -->
-
-                    <div class="col-md-3">
-
-                        <!-- *** MENUS AND WIDGETS *** -->
-
-                        {{ partial "sidebar.html" . }}
-
-                        <!-- *** MENUS AND FILTERS END *** -->
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <!-- *** RIGHT COLUMN END *** -->
-
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
+      <header class="ur-bar ur-bar--gray ur-listhead">
+        <div class="ur-wrap">
+          <p class="ur-listhead__crumbs">
+            <a href="{{ "/" | relLangURL }}">{{ i18n "home" | default "Home" }}</a> &nbsp;/&nbsp; <span>{{ .Title }}</span>
+          </p>
+          <h1 class="ur-listhead__title">{{ .Title }}</h1>
+          {{ with .Description }}<p class="ur-lead">{{ . }}</p>{{ end }}
         </div>
-        <!-- /#content -->
+      </header>
 
-        {{ partial "footer.html" . }}
+      <main class="ur-bar ur-bar--white">
+        <div class="ur-wrap ur-list">
+          {{ $paginator := .Paginate (.Pages) }}
+          <div class="ur-list__grid">
+            {{ range $paginator.Pages }}
+            <article class="ur-post">
+              <a class="ur-post__media" href="{{ .Permalink }}" aria-label="{{ .Title }}">
+                {{ if isset .Params "banner" }}
+                  <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" loading="lazy" />
+                {{ else }}
+                  <span class="ur-post__placeholder" aria-hidden="true"></span>
+                {{ end }}
+                {{ with (index .Params.categories 0) }}<span class="ur-post__cat">{{ . }}</span>{{ end }}
+              </a>
+              <div class="ur-post__body">
+                <h3 class="ur-post__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p class="ur-post__meta">
+                  {{ with .Date }}<span><i class="far fa-calendar" aria-hidden="true"></i> {{ .Format $.Site.Params.date_format }}</span>{{ end }}
+                </p>
+                <p class="ur-post__summary">{{ .Summary | plainify | truncate 160 }}</p>
+                <a class="ur-post__read" href="{{ .Permalink }}">{{ i18n "continueReading" | default "Continue reading" }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+            {{ end }}
+          </div>
 
+          {{ if gt $paginator.TotalPages 1 }}
+          <nav class="ur-pagination" aria-label="Pagination">
+            {{ if $paginator.HasPrev }}<a class="ur-pagination__btn" href="{{ $paginator.Prev.URL }}">← {{ i18n "previous" | default "Previous" }}</a>{{ end }}
+            <span class="ur-pagination__pages">{{ i18n "page" | default "Page" }} {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+            {{ if $paginator.HasNext }}<a class="ur-pagination__btn" href="{{ $paginator.Next.URL }}">{{ i18n "next" | default "Next" }} →</a>{{ end }}
+          </nav>
+          {{ end }}
+        </div>
+      </main>
+
+      {{ partial "footer.html" . }}
     </div>
-    <!-- /#all -->
-
     {{ partial "scripts.html" . }}
-
   </body>
 </html>

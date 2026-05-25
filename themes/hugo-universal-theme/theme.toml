@@ -1,17 +1,19 @@
-name = "Universal"
+# SPDX-License-Identifier: MIT
+name = "Universal Reborn"
 license = "MIT"
 licenselink = "https://github.com/devcows/hugo-universal-theme/blob/master/LICENSE"
-description = "A port of the Universal theme"
+description = "A modernised refresh of the Universal Hugo theme — clean, fast, configurable. Drop-in compatible with the original Site.Params schema."
 homepage = "https://github.com/devcows/hugo-universal-theme"
-tags = ["blog", "company", "portfolio", "projects", "minimal", "responsive"]
-features = ["blog", "themes", "disqus", "minimal", "responsive"]
-min_version = 0.15
+demosite = "https://devcows.github.io/hugo-universal-theme"
+tags = ["business", "company", "responsive", "blog", "shop", "portfolio", "dark-mode"]
+features = ["responsive", "blog", "i18n", "open graph", "twitter cards", "dark mode", "8 colour variants"]
+min_version = "0.112.0"
 
 [author]
-    name = "devcows"
-    homepage = "https://github.com/devcows"
+  name = "Devcows + Bootstrapious (refresh)"
+  homepage = "https://github.com/devcows/hugo-universal-theme"
 
-# If Porting existing theme
 [original]
-    author =  "bootstrapious"
-    homepage = "http://bootstrapious.com/p/universal-business-e-commerce-template"
+  author = "Bootstrapious"
+  homepage = "https://bootstrapious.com/p/universal-business-e-commerce-template"
+  repo = "https://github.com/devcows/hugo-universal-theme"

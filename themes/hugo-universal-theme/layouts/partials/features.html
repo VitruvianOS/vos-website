@@ -2,45 +2,30 @@
 {{ if .Site.Params.features.enable }}
 {{ if isset .Site.Data "features" }}
 {{ if gt (len .Site.Data.features) 0 }}
-<section class="bar background-white">
-    <div class="container">
-        {{ $elements := default 3 .Site.Params.features.cols }}
-        {{ $features := sort .Site.Data.features "weight" }}
-
-        {{ $total_rows := div (len $features) $elements }}
-
-        {{ if gt (mod (len $features) $elements) 0 }}
-          {{ $total_rows = add $total_rows 1 }}
-        {{ end }}
-
-        {{ range $i, $sequence := seq $total_rows }}
-          <div class="row row-{{ $i }} row-{{ if eq (mod $i 2) 0 }}odd{{ else }}even{{ end }}">
-            {{ range $j, $sequence2 := (seq $elements) }}
-
-                {{ $feature_index := add (mul $i $elements) $j }}
-                {{ if lt $feature_index (len $features) }}
-                    {{ $element := index $features $feature_index }}
-
-                    <div class="col-md-{{ div 12 $elements }} col-{{ $j }} col-{{ if eq (mod $j 2) 0 }}odd{{ else }}even{{ end }}">
-                        <div class="box-simple">
-                            {{ with $element.url }}
-                            <a href="{{ $element.url }}">
-                            {{ end }}
-                                <div class="icon">
-                                    <i class="{{ $element.icon }}" aria-hidden="true"></i>
-                                </div>
-                            {{ with $element.url }}
-                            </a>
-                            {{ end }}
-                            <h3>{{ $element.name | markdownify }}</h3>
-                            <p>{{ $element.description | markdownify }}</p>
-                        </div>
-                    </div>
-                {{ end }}
-            {{ end }}
-          </div>
-        {{ end }}
+<section class="ur-bar ur-bar--white ur-features">
+  <div class="ur-wrap">
+    <div class="ur-heading">
+      {{ with .Site.Params.features.eyebrow }}<span class="ur-heading__eyebrow">{{ . }}</span>{{ end }}
+      <h2 class="ur-heading__title">{{ default (i18n "ourServices") .Site.Params.features.title | markdownify }}</h2>
     </div>
+    {{ with .Site.Params.features.subtitle }}
+      <p class="ur-lead">{{ . | markdownify }}</p>
+    {{ end }}
+
+    {{ $cols := default 3 .Site.Params.features.cols }}
+    <div class="ur-features__grid ur-features__grid--{{ $cols }}">
+      {{ range $i, $f := sort .Site.Data.features "weight" }}
+        {{ if $f.url }}<a class="ur-feature" href="{{ $f.url }}">{{ else }}<div class="ur-feature">{{ end }}
+          <div class="ur-feature__icon">
+            <i class="{{ default "fas fa-star" $f.icon }}" aria-hidden="true"></i>
+          </div>
+          <h3 class="ur-feature__title">{{ $f.name | markdownify }}</h3>
+          <p class="ur-feature__desc">{{ $f.description | markdownify }}</p>
+          {{ if $f.url }}<span class="ur-feature__link">{{ i18n "learnMore" | default "Learn more" }} <i class="fas fa-arrow-right" aria-hidden="true"></i></span>{{ end }}
+        {{ if $f.url }}</a>{{ else }}</div>{{ end }}
+      {{ end }}
+    </div>
+  </div>
 </section>
 {{ end }}
 {{ end }}

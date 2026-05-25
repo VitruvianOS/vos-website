@@ -1,29 +1,23 @@
 {{ if isset .Site.Params "see_more" }}
 {{ if .Site.Params.see_more.enable }}
-<section class="bar background-image-fixed-2 no-mb color-white text-center">
-    <div class="dark-mask"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="icon icon-lg"><i class="{{ .Site.Params.see_more.icon }}"></i>
-                </div>
-                <h3 class="text-uppercase">{{ .Site.Params.see_more.title | markdownify }}</h3>
-                <h2 class="text-uppercase">{{ .Site.Params.see_more.title2 | markdownify }}</h2>
-                <p class="lead">{{ .Site.Params.see_more.subtitle | markdownify }}</p>
-                <p class="text-center">
-                    {{ with .Site.Params.see_more.link_url }}
-                    <a href="{{ . }}" class="btn btn-template-transparent-black btn-lg">
-                    {{ end }}
-                        {{ with .Site.Params.see_more.link_text }}
-                        {{ . | markdownify }}
-                        {{ end }}
-                    {{ with .Site.Params.see_more.link_url }}
-                    </a>
-                    {{ end }}
-                </p>
-            </div>
-        </div>
+<section class="ur-bar ur-cta">
+  <div class="ur-wrap ur-cta__inner">
+    {{ with .Site.Params.see_more.icon }}
+      <div class="ur-cta__icon"><i class="{{ . }}" aria-hidden="true"></i></div>
+    {{ end }}
+    {{ with .Site.Params.see_more.title }}<p class="ur-cta__eyebrow">{{ . | markdownify }}</p>{{ end }}
+    {{ with .Site.Params.see_more.title2 }}<h2 class="ur-cta__title">{{ . | markdownify }}</h2>{{ end }}
+    {{ with .Site.Params.see_more.subtitle }}<p class="ur-lead">{{ . | markdownify }}</p>{{ end }}
+
+    <div class="ur-cta__actions">
+      {{ with .Site.Params.see_more.link_url }}
+      <a class="ur-btn ur-btn--lg" href="{{ . }}">{{ default "Learn more" $.Site.Params.see_more.link_text | markdownify }}</a>
+      {{ end }}
+      {{ with .Site.Params.see_more.link2_url }}
+      <a class="ur-btn ur-btn--ghost ur-btn--lg" href="{{ . }}">{{ default "More" $.Site.Params.see_more.link2_text | markdownify }}</a>
+      {{ end }}
     </div>
+  </div>
 </section>
 {{ end }}
 {{ end }}

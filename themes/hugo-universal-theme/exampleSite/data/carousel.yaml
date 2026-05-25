@@ -1,0 +1,37 @@
+- weight: 1
+  eyebrow: "Universal v3.0"
+  icon: "fas fa-bolt"
+  title: 'A clean, stylish theme — <span class="accent">built for serious sites.</span>'
+  description: "<p>A flexible Hugo theme with a customizable landing page, blog, and dozens of preset layouts. Lightweight, fast, ready for production.</p>"
+  badge: "Live demo"
+  icon_lg: "fas fa-window-maximize"
+  cta_text: "Get the theme"
+  cta_url: "#install"
+  cta2_text: "Star on GitHub"
+  cta2_url: "https://github.com/devcows/hugo-universal-theme"
+
+- weight: 2
+  eyebrow: "Easy to customize"
+  icon: "fas fa-palette"
+  title: 'Eight colour schemes. <span class="accent">One config file.</span>'
+  description: |
+    <p>Pick a palette in <code>config.toml</code>, swap the typography, tune the layout — all without touching the source.</p>
+    <ul>
+      <li>8 preset colour variants</li>
+      <li>Dark mode out of the box</li>
+      <li>Override stylesheet via <code>static/css/custom.css</code></li>
+    </ul>
+  badge: "8 themes"
+  icon_lg: "fas fa-paint-roller"
+  cta_text: "View all variants"
+  cta_url: "#variants"
+
+- weight: 3
+  eyebrow: "Truly international"
+  icon: "fas fa-language"
+  title: 'Thirteen languages. <span class="accent">One template.</span>'
+  description: "<p>Full translations for English, German, French, Spanish, Italian, Portuguese, Czech, Polish, Dutch, Russian, Japanese, Chinese — and more.</p>"
+  badge: "13 locales"
+  icon_lg: "fas fa-globe"
+  cta_text: "See translations"
+  cta_url: "#i18n"

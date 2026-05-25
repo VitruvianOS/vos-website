@@ -1,38 +1,76 @@
 {{ if default true .Site.Params.CarouselHomepage.enable }}
 {{ if isset .Site.Data "carousel" }}
 {{ if gt (len .Site.Data.carousel) 0 }}
-<section>
-    <div class="home-carousel">
-        <div class="dark-mask"></div>
-        <div class="container">
-            <div class="homepage owl-carousel"
-                data-autoplay="{{ default true .Site.Params.CarouselHomepage.auto_play }}"
-                data-slide-speed="{{ default 2000 .Site.Params.CarouselHomepage.slide_speed }}"
-                data-pagination-speed="{{ default 1000 .Site.Params.CarouselHomepage.pagination_speed }}">
-                {{ range sort .Site.Data.carousel "weight" }}
-                <div class="item">
-                    {{ if .href }}
-                    <a href="{{ .href }}" target="_blank" title="{{ .title | safeHTML }}">
-                    {{ end }}
-                        <div class="row">
-                            <div class="col-sm-5 right">
-                                <h1>{{ .title | safeHTML }}</h1>
-                                {{ .description | safeHTML }}
-                            </div>
-                            <div class="col-sm-7">
-                                <img class="img-responsive" src="{{ .image }}" alt="">
-                            </div>
-                        </div>
-                    {{ if .href }}
-                    </a>
-                    {{ end }}
-                </div>
+<section class="ur-hero">
+  <div class="ur-wrap">
+    <div class="ur-slider"
+         data-autoplay="{{ default true .Site.Params.CarouselHomepage.auto_play }}"
+         data-interval="{{ default 6500 .Site.Params.CarouselHomepage.slide_speed }}">
+      <div class="ur-slider__track" id="ur-slides">
+        {{ range $i, $slide := sort .Site.Data.carousel "weight" }}
+          <article class="ur-slide {{ if eq $i 0 }}is-on{{ end }}">
+            <div class="ur-slide__text">
+              {{ with $slide.eyebrow }}
+                <span class="ur-slide__eyebrow">
+                  {{ with $slide.icon }}<i class="{{ . }}" aria-hidden="true"></i>{{ end }}
+                  {{ . }}
+                </span>
+              {{ end }}
+
+              {{ with $slide.href }}<a class="ur-slide__link" href="{{ . }}">{{ end }}
+                <h1 class="ur-slide__title">{{ $slide.title | safeHTML }}</h1>
+              {{ with $slide.href }}</a>{{ end }}
+
+              <div class="ur-slide__desc">{{ $slide.description | safeHTML }}</div>
+
+              {{ if or $slide.cta_text $slide.cta2_text }}
+              <div class="ur-slide__ctas">
+                {{ with $slide.cta_text }}
+                  <a class="ur-btn ur-btn--lg" href="{{ default "#" $slide.cta_url }}">{{ . }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 {{ end }}
+                {{ with $slide.cta2_text }}
+                  <a class="ur-btn ur-btn--ghost ur-btn--lg" href="{{ default "#" $slide.cta2_url }}">{{ . }}</a>
+                {{ end }}
+              </div>
+              {{ end }}
             </div>
-            <!-- /.project owl-slider -->
+
+            <div class="ur-slide__media">
+              {{ with $slide.badge }}<span class="ur-slide__badge">{{ . }}</span>{{ end }}
+              {{ if $slide.image }}
+                <img src="{{ $slide.image | relURL }}" alt="{{ default "" $slide.title | plainify }}" loading="{{ if eq $i 0 }}eager{{ else }}lazy{{ end }}" />
+              {{ else }}
+                <div class="ur-slide__placeholder"><i class="{{ default "fas fa-window-maximize" $slide.icon_lg }}" aria-hidden="true"></i></div>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+
+      <div class="ur-slider__nav">
+        <div class="ur-slider__dots" id="ur-dots" role="tablist"></div>
+        <div class="ur-slider__arrows">
+          <button class="ur-iconbtn" id="ur-prev" aria-label="Previous slide"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+          <button class="ur-iconbtn" id="ur-next" aria-label="Next slide"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
+      </div>
     </div>
+  </div>
 </section>
+
+{{ if isset .Site.Params "stats" }}{{ if .Site.Params.stats.enable }}{{ if isset .Site.Data "stats" }}
+<div class="ur-stats">
+  <div class="ur-wrap ur-stats__grid">
+    {{ range .Site.Data.stats }}
+    <div class="ur-stat">
+      <div class="ur-stat__n">{{ .number }}</div>
+      <div class="ur-stat__l">{{ .label }}</div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}{{ end }}{{ end }}
+
 {{ end }}
 {{ end }}
 {{ end }}

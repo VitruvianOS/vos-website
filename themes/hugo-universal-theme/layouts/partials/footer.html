@@ -1,89 +1,69 @@
-<footer id="footer">
-    <div class="container">
+<footer class="ur-footer" id="footer">
+  <div class="ur-wrap ur-footer__grid">
 
-        {{ if isset .Site.Params "about_us" }}
-        <div class="col-md-4 col-sm-6">
-            <h4>{{ i18n "aboutUs" }}</h4>
-
-            {{ .Site.Params.about_us | safeHTML }}
-
-            <hr class="hidden-md hidden-lg hidden-sm">
-
+    {{ if isset .Site.Params "about_us" }}
+    <div class="ur-footer__col ur-footer__col--wide">
+      <h4 class="ur-footer__title">{{ i18n "aboutUs" | default "About us" }}</h4>
+      <div class="ur-footer__about">{{ .Site.Params.about_us | safeHTML }}</div>
+      {{ if .Site.Menus.footer_social }}
+        <div class="ur-footer__social">
+          {{ range .Site.Menus.footer_social.ByWeight }}
+            <a href="{{ .URL | safeURL }}" target="_blank" rel="noopener" aria-label="{{ .Name }}">{{ .Pre | safeHTML }}</a>
+          {{ end }}
         </div>
-        <!-- /.col-md-4 -->
-        {{ end }}
-
-        <div class="col-md-4 col-sm-6">
-
-            {{ if isset .Site.Params "recent_posts" }}{{ if (default true .Site.Params.footer.recent_posts.enable) }}
-            <h4>{{ i18n "recentPosts" }}</h4>
-
-            <div class="blog-entries">
-                {{ range first 3 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-                <div class="item same-height-row clearfix">
-                    <div class="image same-height-always">
-                        <a href="{{ .Permalink }}">
-                          {{ if isset .Params "banner" }}
-                            <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="{{ .Title }}" />
-                          {{ else }}
-                            <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="{{ .Title }}" />
-                          {{ end }}
-                        </a>
-                    </div>
-                    <div class="name same-height-always">
-                        <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
-                    </div>
-                </div>
-                {{ end }}
-            </div>
-
-            <hr class="hidden-md hidden-lg">
-            {{ end }}{{ end }}
-
-        </div>
-        <!-- /.col-md-4 -->
-
-        {{ if isset .Site.Params "address" }}
-        <div class="col-md-4 col-sm-6">
-
-          <h4>{{ i18n "contactTitle" }}</h4>
-
-            {{ .Site.Params.address | safeHTML }}
-
-	    <a href="{{ default "/contact" .Site.Params.contact_url }}" class="btn btn-small btn-template-main">{{ i18n "contactGoTo" }}</a>
-
-            <hr class="hidden-md hidden-lg hidden-sm">
-
-        </div>
-        <!-- /.col-md-4 -->
-        {{ end }}
-
+      {{ end }}
     </div>
-    <!-- /.container -->
+    {{ end }}
+
+    {{ if and (isset .Site.Params "recent_posts") (default true .Site.Params.footer.recent_posts.enable) }}
+    <div class="ur-footer__col">
+      <h4 class="ur-footer__title">{{ i18n "recentPosts" | default "Recent posts" }}</h4>
+      <ul class="ur-footer__posts">
+        {{ range first 3 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{ if .Site.Menus.footer }}
+    <div class="ur-footer__col">
+      <h4 class="ur-footer__title">{{ i18n "quickLinks" | default "Quick links" }}</h4>
+      <ul class="ur-footer__links">
+        {{ range .Site.Menus.footer.ByWeight }}
+          <li><a href="{{ .URL }}"><i class="fas fa-angle-right" aria-hidden="true"></i>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{ if isset .Site.Params "address" }}
+    <div class="ur-footer__col">
+      <h4 class="ur-footer__title">{{ i18n "contactTitle" | default "Contact" }}</h4>
+      <div class="ur-footer__address">{{ .Site.Params.address | safeHTML }}</div>
+      {{ if .Site.Params.newsletter.enable }}
+        <p class="ur-footer__newsletter-pitch">{{ default "Newsletter — quarterly only." .Site.Params.newsletter.pitch | markdownify }}</p>
+        <form class="ur-footer__newsletter" action="{{ default "#" .Site.Params.newsletter.url }}" method="post">
+          <input type="email" name="email" placeholder="{{ default "your@email.com" .Site.Params.newsletter.placeholder }}" required />
+          <button type="submit">{{ default "Subscribe" .Site.Params.newsletter.button }}</button>
+        </form>
+      {{ else }}
+        <a href="{{ default "/contact" .Site.Params.contact_url }}" class="ur-btn ur-btn--sm">{{ i18n "contactGoTo" | default "Go to contact" }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+  </div>
 </footer>
 
-<!-- /#footer -->
-
-<!-- *** FOOTER END *** -->
-
-<!-- *** COPYRIGHT ***
-_________________________________________________________ -->
-
-<div id="copyright">
-    <div class="container">
-        <div class="col-md-12">
-            {{ if isset .Site.Params "copyright" }}
-            <p class="pull-left">{{ .Site.Params.copyright | safeHTML }}</p>
-            {{ end }}
-            <p class="pull-right">
-              {{ i18n "templateBy" | markdownify }} <a href="https://bootstrapious.com/universal-business-e-commerce-template">Bootstrapious</a>.
-              <!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->
-
-              {{ i18n "portedBy" | markdownify }} <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
-            </p>
-        </div>
-    </div>
+<div class="ur-copyright">
+  <div class="ur-wrap ur-copyright__row">
+    {{ if isset .Site.Params "copyright" }}
+      <p class="ur-copyright__left">{{ .Site.Params.copyright | safeHTML }}</p>
+    {{ end }}
+    <p class="ur-copyright__right">
+      {{ i18n "templateBy" | default "Template by" | markdownify }} <a href="https://bootstrapious.com/universal-business-e-commerce-template">Bootstrapious</a>.
+      {{ i18n "portedBy" | default "Ported by" | markdownify }} <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
+    </p>
+  </div>
 </div>
-<!-- /#copyright -->
-
-<!-- *** COPYRIGHT END *** -->

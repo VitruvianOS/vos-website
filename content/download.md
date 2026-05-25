@@ -25,7 +25,7 @@ See the [How To Install](https://wiki.v-os.dev/docs/getting-started/how-to-insta
 
 ### System Requirements
 
-- x86-64 processor (ARM and RISC-V in progress)
+- x86-64 or arm64 processor (RISC-V in progress)
 - 512 MB RAM minimum (4 GB recommended)
 - 1 GB disk space
 

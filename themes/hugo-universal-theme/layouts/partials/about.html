@@ -1,18 +1,17 @@
 {{ if isset .Site.Params "about" }}
 {{ if .Site.Params.about.enable }}
-<section class="bar background-image-fixed-2 no-mb text-center">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="icon"><i class="{{ .Site.Params.about.icon }}"></i>
-                </div>
-                <h3 class="text-uppercase">{{ .Site.Params.about.title | markdownify }}</h3>
-                <p class="lead">{{ .Site.Params.about.subtitle | markdownify }}</p>
-                <p class="lead">{{ .Site.Params.about.subtitle2 | markdownify }}</p>
-            </div>
-        </div>
-    </div>
+<section class="ur-bar ur-bar--gray ur-about">
+  <div class="ur-wrap ur-about__inner">
+    {{ with .Site.Params.about.icon }}
+      <div class="ur-about__icon"><i class="{{ . }}" aria-hidden="true"></i></div>
+    {{ end }}
+    <h2 class="ur-about__title">{{ .Site.Params.about.title | markdownify }}</h2>
+    {{ with .Site.Params.about.subtitle }}<p class="ur-lead">{{ . | markdownify }}</p>{{ end }}
+    {{ with .Site.Params.about.subtitle2 }}<p class="ur-lead">{{ . | markdownify }}</p>{{ end }}
+    {{ with .Site.Params.about.cta_text }}
+      <a class="ur-btn ur-btn--lg" href="{{ default "#" $.Site.Params.about.cta_url }}">{{ . }}</a>
+    {{ end }}
+  </div>
 </section>
 {{ end }}
 {{ end }}

@@ -42,11 +42,6 @@
                         {{ end }}
 
                         <div id="post-content">
-                          {{ if isset .Params "banner" }}
-                          <a href="{{ .Params.banner | relURL }}" target="_blank">
-                            <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" style="float: right; margin: 0 0 1.2em 1.8em; max-width: 512px; width: 100%; height: auto; border-radius: 4px;">
-                          </a>
-                          {{ end }}
                           {{ .Content }}
                         </div>
                         <!-- /#post-content -->

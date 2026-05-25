@@ -1,0 +1,35 @@
+- weight: 1
+  icon: "fas fa-lightbulb"
+  name: "Consulting"
+  description: "Sensible design defaults, opinionated where it matters. Turn on what you need; the rest stays out of your way."
+  url: "/services/consulting/"
+
+- weight: 2
+  icon: "fas fa-palette"
+  name: "UI/UX Design"
+  description: "A type system tuned for long-form reading. Variable fonts, proper hierarchy, balanced wrapping — handled."
+  url: "/services/design/"
+
+- weight: 3
+  icon: "fas fa-code"
+  name: "Web Development"
+  description: "Twelve sections, twelve toggles in one TOML file. No build step, no Node tooling, no nonsense."
+  url: "/services/development/"
+
+- weight: 4
+  icon: "fas fa-search"
+  name: "SEO Ready"
+  description: "Open Graph, Twitter cards, structured data, and a clean semantic outline — wired up by default."
+  url: "/services/seo/"
+
+- weight: 5
+  icon: "fas fa-envelope"
+  name: "Email Marketing"
+  description: "Formspree-backed contact forms with optional reCAPTCHA. No backend, no server, no maintenance."
+  url: "/services/marketing/"
+
+- weight: 6
+  icon: "fas fa-mobile-screen"
+  name: "Responsive"
+  description: "Built mobile-first and tested at every breakpoint from 320px up. Sticky nav, hamburger menu, the works."
+  url: "/services/responsive/"
