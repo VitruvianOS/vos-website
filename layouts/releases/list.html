@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "headers.html" . }}
+    {{ partial "custom_headers.html" . }}
+  </head>
+  <body class="list list-releases">
+    <div id="all">
+      {{ partial "top.html" . }}
+      {{ partial "nav.html" . }}
+
+      <header class="ur-bar ur-bar--gray ur-listhead">
+        <div class="ur-wrap">
+          <p class="ur-listhead__crumbs">
+            <a href="{{ "/" | relLangURL }}">{{ i18n "home" | default "Home" }}</a> &nbsp;/&nbsp; <span>{{ .Title }}</span>
+          </p>
+          <h1 class="ur-listhead__title">{{ .Title }}</h1>
+          {{ with .Description }}<p class="ur-lead">{{ . }}</p>{{ end }}
+        </div>
+      </header>
+
+      <main class="ur-bar ur-bar--white">
+        <div class="ur-wrap" style="padding: 2rem 0;">
+          {{ .Content }}
+        </div>
+      </main>
+
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>
