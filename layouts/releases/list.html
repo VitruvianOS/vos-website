@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "headers.html" . }}
+    {{ partial "custom_headers.html" . }}
+  </head>
+  <body class="list list-releases">
+    <div id="all">
+      {{ partial "top.html" . }}
+      {{ partial "nav.html" . }}
+
+      <header class="ur-bar ur-bar--gray ur-listhead">
+        <div class="ur-wrap">
+          <p class="ur-listhead__crumbs">
+            <a href="{{ "/" | relLangURL }}">{{ i18n "home" | default "Home" }}</a> &nbsp;/&nbsp; <span>{{ .Title }}</span>
+          </p>
+          <h1 class="ur-listhead__title">{{ .Title }}</h1>
+          {{ with .Description }}<p class="ur-lead">{{ . }}</p>{{ end }}
+        </div>
+      </header>
+
+      <main class="ur-bar ur-bar--white">
+        <div class="ur-wrap ur-list">
+          {{ $paginator := .Paginate (.Pages) }}
+          <div class="ur-list__list">
+            {{ range $paginator.Pages }}
+            <article class="ur-post ur-post--list">
+              <div class="ur-post__list-header">
+                <h3 class="ur-post__title">
+                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                <div class="ur-post__meta">
+                  {{ with .Date }}
+                    <span class="ur-post__date">
+                      <i class="far fa-calendar" aria-hidden="true"></i> {{ .Format $.Site.Params.date_format }}
+                    </span>
+                  {{ end }}
+                  {{ with (index .Params.categories 0) }}
+                    <span class="ur-post__category">{{ . }}</span>
+                  {{ end }}
+                </div>
+              </div>
+              {{ if .Params.banner }}
+                <div class="ur-post__list-media">
+                  <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" loading="lazy" />
+                </div>
+              {{ end }}
+              <div class="ur-post__list-content">
+                {{ if .Summary }}
+                  <p class="ur-post__summary">{{ .Summary | plainify | truncate 300 }}</p>
+                {{ end }}
+                {{ if .Params.tags }}
+                  <div class="ur-post__tags">
+                    {{ range .Params.tags }}
+                      <span class="ur-post__tag">{{ . }}</span>
+                    {{ end }}
+                  </div>
+                {{ end }}
+                <a class="ur-post__read" href="{{ .Permalink }}">{{ i18n "continueReading" | default "Continue reading" }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+            {{ end }}
+          </div>
+
+          {{ if gt $paginator.TotalPages 1 }}
+          <nav class="ur-pagination" aria-label="Pagination">
+            {{ if $paginator.HasPrev }}<a class="ur-pagination__btn" href="{{ $paginator.Prev.URL }}">← {{ i18n "previous" | default "Previous" }}</a>{{ end }}
+            <span class="ur-pagination__pages">{{ i18n "page" | default "Page" }} {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+            {{ if $paginator.HasNext }}<a class="ur-pagination__btn" href="{{ $paginator.Next.URL }}">{{ i18n "next" | default "Next" }} →</a>{{ end }}
+          </nav>
+          {{ end }}
+        </div>
+      </main>
+
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

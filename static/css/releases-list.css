@@ -1,0 +1,129 @@
+/* Releases List Layout */
+.list-releases .ur-list__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ur-post--list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.ur-post--list:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ur-post__list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ur-post__list-header .ur-post__title {
+  margin: 0;
+  flex: 1;
+}
+
+.ur-post__list-header .ur-post__title a {
+  color: #1f2937;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ur-post__list-header .ur-post__title a:hover {
+  color: #3b82f6;
+}
+
+.ur-post__list-header .ur-post__meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ur-post__list-media {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ur-post__list-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ur-post__list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ur-post__summary {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ur-post__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ur-post__tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.ur-post__read {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.ur-post__read:hover {
+  color: #2563eb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ur-post__list-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .ur-post__list-header .ur-post__title {
+    width: 100%;
+  }
+  
+  .ur-post__list-header .ur-post__meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .ur-post__tags {
+    flex-wrap: wrap;
+  }
+}
