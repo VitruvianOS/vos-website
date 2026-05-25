@@ -1,171 +1,127 @@
-/* Compact Releases Timeline */
-.releases-timeline {
-  position: relative;
-  padding-left: 2rem;
-}
+/* GitHub Releases Page Styles */
 
-.releases-timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.75rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #e5e7eb;
-}
-
-.release-item {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.release-item:last-child {
-  margin-bottom: 0;
-}
-
-.release-dot {
-  position: absolute;
-  left: -2.25rem;
-  top: 0.25rem;
-  width: 12px;
-  height: 12px;
-  background: #3b82f6;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 0 2px #e5e7eb;
-  z-index: 1;
-}
-
-.release-content {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+/* Releases Table */
+.releases-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  background: #ffffff;
   border-radius: 8px;
-  padding: 1rem 1.5rem;
-  transition: box-shadow 0.2s ease;
-}
-
-.release-content:hover {
+  overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.release-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
+.releases-table th {
+  background: #f9fafb;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.release-title {
-  margin: 0;
-  flex: 1;
-  min-width: 0;
+.releases-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
 }
 
-.release-title a {
+.releases-table tr:last-child td {
+  border-bottom: none;
+}
+
+.releases-table tr:hover {
+  background: #f9fafb;
+}
+
+.version-cell {
+  font-weight: 600;
+}
+
+.version-cell a {
   color: #1f2937;
   text-decoration: none;
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.3;
 }
 
-.release-title a:hover {
+.version-cell a:hover {
   color: #3b82f6;
 }
 
-.release-meta {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.release-date {
+.date-cell {
   color: #6b7280;
   font-size: 0.875rem;
   white-space: nowrap;
 }
 
-.release-category {
-  background: #dbeafe;
-  color: #1e40af;
-  padding: 0.125rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
+.downloads-cell {
+  text-align: center;
 }
 
-.release-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.release-tag {
-  background: #f3f4f6;
-  color: #374151;
-  padding: 0.125rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.release-summary {
-  color: #6b7280;
-  line-height: 1.5;
-  margin: 0 0 0.75rem;
-  font-size: 0.875rem;
-}
-
-.release-readmore {
+.downloads-cell a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   color: #3b82f6;
   text-decoration: none;
   font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  background: #eff6ff;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.downloads-cell a:hover {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+/* Quick Links Section */
+.quick-links {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+  flex-wrap: wrap;
+}
+
+.quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: background 0.2s ease;
 }
 
-.release-readmore:hover {
-  color: #2563eb;
+.quick-link:hover {
+  background: #2563eb;
 }
 
-/* Responsive adjustments */
+.quick-link.secondary {
+  background: #6b7280;
+}
+
+.quick-link.secondary:hover {
+  background: #4b5563;
+}
+
+/* Responsive table */
 @media (max-width: 768px) {
-  .releases-timeline {
-    padding-left: 1.5rem;
+  .releases-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
   
-  .releases-timeline::before {
-    left: 0.5rem;
-  }
-  
-  .release-dot {
-    left: -1.75rem;
-  }
-  
-  .release-content {
-    padding: 0.875rem 1.25rem;
-  }
-  
-  .release-header {
+  .quick-links {
     flex-direction: column;
-    gap: 0.5rem;
   }
   
-  .release-title {
+  .quick-link, .quick-link.secondary {
     width: 100%;
-  }
-  
-  .release-meta {
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
   }
 }

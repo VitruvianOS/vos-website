@@ -1,0 +1,61 @@
+{{/* GitHub Releases Shortcode */}}
+{{/* 
+  Usage: {{< ghreleases user="username" repo="reponame" count="5" >}} 
+  Fetches and displays GitHub releases from the specified repository.
+*/}}
+
+{{ $user := .Get "user" }}
+{{ $repo := .Get "repo" }}
+{{ $count := .Get "count" | default "5" | int }}
+{{ $api_url := printf "https://api.github.com/repos/%s/%s/releases" $user $repo }}
+
+<div class="gh-releases">
+  <h3>GitHub Releases</h3>
+  <div class="release-list">
+    {{/* This is a placeholder for actual GitHub API data */}}
+    <p style="color: #6b7280; font-style: italic;">
+      Direct GitHub releases integration will be implemented. 
+      In the meantime, please visit the official GitHub releases page.
+    </p>
+    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+      <li><a href="https://github.com/{{ $user }}/{{ $repo }}/releases" target="_blank">View all releases on GitHub</a></li>
+    </ul>
+  </div>
+</div>
+
+<style>
+.gh-releases {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.gh-releases h3 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.release-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.release-list li {
+  margin-bottom: 0.5rem;
+}
+
+.release-list a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.release-list a:hover {
+  text-decoration: underline;
+}
+</style>
