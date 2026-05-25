@@ -7,7 +7,7 @@ keywords = ["FAQ", "questions", "Vitruvian"]
 
 ## What is VitruvianOS?
 
-Vitruvian is an operating system based on Linux, inspired by the BeOS. It brings the BeOS/Haiku API and desktop philosophy to modern hardware, running on a real-time patched Linux kernel.
+Vitruvian is an operating system based on Linux, inspired by the BeOS. It brings the BeOS/Haiku API and desktop philosophy to modern hardware, running on a Linux kernel with custom kernel modules.
 
 ## Is it based on Haiku?
 

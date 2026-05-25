@@ -5,21 +5,21 @@ type = "page"
 
 ## What is VitruvianOS?
 
-Vitruvian — also known as **V\OS** — is the human-centric Operating System. Built on Linux and inspired by BeOS, it brings the elegance and simplicity of a classic operating system to modern hardware — without sacrificing the power and hardware support that Linux provides.
+Vitruvian, also known as **V\OS**, is the human-centric Operating System. Built on Linux and inspired by BeOS, it brings the elegance and simplicity of a classic operating system to modern hardware without sacrificing the power and hardware support that Linux provides.
 
-Custom-built kernel modules and real-time patches deliver a responsive, low-latency desktop experience. The BeOS/Haiku API is supported on Linux with minimal to no changes required to application source code.
+Custom-built kernel modules deliver a responsive, low-latency desktop experience. The BeOS/Haiku API is supported on Linux with minimal to no changes required to application source code.
 
 ## Philosophy
 
-- **Fast and reactive** — Minimal latency from input to response. No bloat, no unnecessary services competing for your attention.
-- **Highly integrated** — The Vitruvian desktop, applications, and system services are designed to work as a coherent whole.
-- **It's your computer** — No telemetry, no hidden agendas. V\OS doesn't work against you.
-- **KISS** — Simple by design. Anyone can feel at home quickly.
-- **Out of the box** — Sensible defaults. Everything works without configuration.
+- **Fast and reactive**: Minimal latency from input to response. No bloat, no unnecessary services competing for your attention.
+- **Highly integrated**: The Vitruvian desktop, applications, and system services are designed to work as a coherent whole.
+- **It's your computer**: No telemetry, no hidden agendas. V\OS doesn't work against you.
+- **KISS**: Simple by design. Anyone can feel at home quickly.
+- **Out of the box**: Sensible defaults. Everything works without configuration.
 
 ## Technical Foundation
 
-The reference boot filesystems are **XFS** and **SquashFS**, both with full extended attribute support — XFS for standard desktop installs, SquashFS for live images and embedded targets. Ext4 and most other Linux filesystems with extended attribute support also work. The default kernel ships with real-time patches (`PREEMPT_RT`) for a genuinely responsive desktop; non-RT kernels are also supported. Filesystem indexing, live queries, and multiuser support with graphical login are on the roadmap.
+The reference boot filesystems are **XFS** and **SquashFS**, both with full extended attribute support. XFS for standard desktop installs, SquashFS for live images and embedded targets. Ext4 and most other Linux filesystems with extended attribute support also work. Filesystem indexing, live queries, and multiuser support with graphical login are on the roadmap.
 
 ### Nexus
 

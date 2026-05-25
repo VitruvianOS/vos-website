@@ -132,7 +132,7 @@ pluralizelisttitles = false
     enableRecaptchaInContactForm = false
     googleRecaptchaKey = "site_key_for_google_recaptcha"
 
-    about_us = "<p>VitruvianOS — a BeOS-inspired desktop on Linux.</p>"
+    about_us = "<p>VitruvianOS: a BeOS-inspired desktop on Linux.</p>"
     copyright = "Copyright (c) 2018 - 2025, The Vitruvian Project; all rights reserved."
 
     # Format dates with Go's time formatting
@@ -197,8 +197,8 @@ pluralizelisttitles = false
     enable = true
     #icon = "far fa-file-alt"
     title = "What is VitruvianOS?"
-    subtitle = "V&#92;OS is a Linux-based operating system inspired by BeOS. It brings the simplicity and responsiveness of a classic desktop to modern hardware — custom kernel modules, real-time patches, and a BeOS/Haiku API compatibility layer that runs on Linux with minimal to no source changes."
-    subtitle2 = "The reference boot filesystems are XFS and SquashFS, both with extended attribute support. Filesystem indexing, live queries, and multiuser graphical login are on the roadmap. The default kernel ships with PREEMPT_RT patches; non-RT kernels also work."
+    subtitle = "V&#92;OS is a Linux-based operating system inspired by BeOS. It brings the simplicity and responsiveness of a classic desktop to modern hardware: custom kernel modules and a BeOS/Haiku API compatibility layer that runs on Linux with minimal to no source changes."
+    subtitle2 = "The reference boot filesystems are XFS and SquashFS, both with extended attribute support. Filesystem indexing, live queries, and multiuser graphical login are on the roadmap."
 
 [params.see_more]
     enable = true
