@@ -22,43 +22,39 @@
       <main class="ur-bar ur-bar--white">
         <div class="ur-wrap ur-list">
           {{ $paginator := .Paginate (.Pages) }}
-          <div class="ur-list__list">
+          <div class="releases-timeline">
             {{ range $paginator.Pages }}
-            <article class="ur-post ur-post--list">
-              <div class="ur-post__list-header">
-                <h3 class="ur-post__title">
-                  <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </h3>
-                <div class="ur-post__meta">
-                  {{ with .Date }}
-                    <span class="ur-post__date">
-                      <i class="far fa-calendar" aria-hidden="true"></i> {{ .Format $.Site.Params.date_format }}
-                    </span>
-                  {{ end }}
-                  {{ with (index .Params.categories 0) }}
-                    <span class="ur-post__category">{{ . }}</span>
-                  {{ end }}
+            <div class="release-item">
+              <div class="release-dot"></div>
+              <div class="release-content">
+                <div class="release-header">
+                  <h3 class="release-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </h3>
+                  <div class="release-meta">
+                    {{ with .Date }}
+                      <time class="release-date">{{ .Format $.Site.Params.date_format }}</time>
+                    {{ end }}
+                    {{ with (index .Params.categories 0) }}
+                      <span class="release-category">{{ . }}</span>
+                    {{ end }}
+                  </div>
                 </div>
-              </div>
-              {{ if .Params.banner }}
-                <div class="ur-post__list-media">
-                  <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" loading="lazy" />
-                </div>
-              {{ end }}
-              <div class="ur-post__list-content">
-                {{ if .Summary }}
-                  <p class="ur-post__summary">{{ .Summary | plainify | truncate 300 }}</p>
-                {{ end }}
                 {{ if .Params.tags }}
-                  <div class="ur-post__tags">
+                  <div class="release-tags">
                     {{ range .Params.tags }}
-                      <span class="ur-post__tag">{{ . }}</span>
+                      <span class="release-tag">{{ . }}</span>
                     {{ end }}
                   </div>
                 {{ end }}
-                <a class="ur-post__read" href="{{ .Permalink }}">{{ i18n "continueReading" | default "Continue reading" }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <div class="release-summary">
+                  {{ .Summary | plainify | truncate 200 }}
+                </div>
+                <a class="release-readmore" href="{{ .Permalink }}">
+                  View release notes <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
               </div>
-            </article>
+            </div>
             {{ end }}
           </div>
 
