@@ -87,6 +87,12 @@ pluralizelisttitles = false
     url = "https://t.me/vitruvian_official"
     pre = "<i class='fab fa-2x fa-telegram'></i>"
 
+[[menu.topbar]]
+    weight = 3
+    name = "DistroWatch"
+    url = "https://distrowatch.com/table.php?distribution=vitruvian"
+    pre = "<i class='fas fa-2x fa-star'></i>"
+
 
 [params]
     viewMorePostLink = "/blog/"
