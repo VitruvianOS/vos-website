@@ -4,6 +4,7 @@ date = "2026-06-02T00:00:00+00:00"
 categories = ["announcement"]
 tags = ["release", "news", "0.4.0"]
 authors = ["VitruvianOS Team"]
+banner = "screenshots/0.4.0-thumbnail.jpeg"
 +++
 
 A broad foundation release: better hardware support, a saner desktop session, and a more reliable build pipeline.
