@@ -30,3 +30,5 @@ We fixed this by making janus the last process alive. When you click Shutdown, t
 Right now janus launches and manages registrar, `app_server`, `input_server`, `mount_server`, `notification_server`, Deskbar, and Tracker. VT switching works, shutdown doesn't hang, and the security boundary is in place.
 
 This is the main blocker for a graphical login, however, still other system services are not aware of the newly introduced security model, so before we have a true multiuser login there's still some work to do.
+
+A little curiosity before the article ends: janus is called after the italic (or Roman if you like) god of beginnings, gates, transitions, time, duality, doorways, passages, frames, and endings. You might have already seen it, as it's a double headed figure representing the beginning and the end in the Roman pantheon.
