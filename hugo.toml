@@ -76,6 +76,12 @@ pluralizelisttitles = false
 # Top bar social links menu
 
 [[menu.topbar]]
+    weight = 0
+    name = "Support us on DistroWatch!"
+    url = "https://distrowatch.com/table.php?distribution=vitruvian"
+    post = "<i class='fas fa-star'></i>"
+
+[[menu.topbar]]
     weight = 1
     name = "GitHub"
     url = "https://github.com/VitruvianOS"
@@ -86,12 +92,6 @@ pluralizelisttitles = false
     name = "Telegram"
     url = "https://t.me/vitruvian_official_chat"
     pre = "<i class='fab fa-2x fa-telegram'></i>"
-
-[[menu.topbar]]
-    weight = 3
-    name = "DistroWatch"
-    url = "https://distrowatch.com/table.php?distribution=vitruvian"
-    pre = "<i class='fas fa-2x fa-star'></i>"
 
 
 [params]
