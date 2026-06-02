@@ -12,7 +12,7 @@ Its job is to bring up the entire Vitruvian desktop and keep it running until sh
 
 ## What it does
 
-First, janus owns the screen. It opens a session with libseat, which is the same seat management layer that Wayland compositors use. This gives janus control over the GPU, the DRM device, and the input devices. When `app_server` starts, janus hands it the GPU file descriptor. When you switch to a TTY and back, janus tells all the servers to enable or disable their seat. The servers get `B_SEAT_ENABLED` and `B_SEAT_DISABLED` messages so they know when they can draw and when they should back off.
+First, janus owns the screen. It opens a session with libseat, which is the same seat management layer that Wayland compositors use. This gives janus control over the GPU, the DRM device, and the input devices. When the `app_server` starts, janus hands it the GPU file descriptor. When you switch to a TTY and back, janus tells all the servers to enable or disable their seat. The servers and applications get `B_SEAT_ENABLED` and `B_SEAT_DISABLED` messages so they know when they can draw and when they should back off.
 
 Second, janus starts everything. Every system server you see in Vitruvian, from the registrar to Tracker to Deskbar, gets forked and exec'd by janus. A small helper called `janus_launch` sends a request, janus forks, sets up logging, and waits for the child to confirm it's alive.
 
@@ -27,8 +27,8 @@ We fixed this by making janus the last process alive. When you click Shutdown, t
 
 ## Status
 
-Right now janus launches and manages registrar, `app_server`, `input_server`, `mount_server`, `notification_server`, Deskbar, and Tracker. VT switching works, shutdown doesn't hang, and the security boundary is in place.
+Right now janus launches and manages the Vitruvian services, the GPU initialization to be handed off to the services, VT switching, and the security boundaries.
 
 This is the main blocker for a graphical login, however, still other system services are not aware of the newly introduced security model, so before we have a true multiuser login there's still some work to do.
 
-A little curiosity before the article ends: janus is called after the italic (or Roman if you like) god of beginnings, gates, transitions, time, duality, doorways, passages, frames, and endings. You might have already seen it, as it's a double headed figure representing the beginning and the end in the Roman pantheon.
+A little curiosity before the article ends: janus is called after the italic (or Roman if you like) god of beginnings, gates, transitions, time, duality, doorways, passages, frames, and endings. You might have already seen it, as it's a double headed figure representing the beginning and the end in the Roman pantheon, very commonly found on ancient coins.
