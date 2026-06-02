@@ -34,8 +34,4 @@ ARM64 builds are now produced alongside x86_64.
 
 [GitHub release page](https://github.com/VitruvianOS/Vitruvian/releases/tag/0.4.0)
 
-Thanks for trying Vitruvian, please report what works and what doesn't!
-
-**Don't forget to support us financially, we are a big project and we're being overwhelmed by expenses.**
-
 Visit [our Donate page](https://v-os.dev/donate/) if you want to help us.
