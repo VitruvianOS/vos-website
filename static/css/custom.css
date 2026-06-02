@@ -116,3 +116,37 @@
     margin-top: 8px;
     font-size: 0.9em;
 }
+
+/* Share buttons */
+.ur-share {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+.ur-share__label {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #555;
+    margin-right: 4px;
+}
+.ur-share__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.ur-share__link:hover { opacity: 0.8; color: #fff; }
+.ur-share__link[title="WhatsApp"]   { background: #25D366; }
+.ur-share__link[title="Twitter"]    { background: #1DA1F2; }
+.ur-share__link[title="LinkedIn"]   { background: #0077B5; }
+.ur-share__link[title="Telegram"]   { background: #0088CC; }
+.ur-share__link[title="Facebook"]   { background: #1877F2; }

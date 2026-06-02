@@ -84,7 +84,7 @@ pluralizelisttitles = false
 [[menu.topbar]]
     weight = 2
     name = "Telegram"
-    url = "https://t.me/vitruvian_official"
+    url = "https://t.me/vitruvian_official_chat"
     pre = "<i class='fab fa-2x fa-telegram'></i>"
 
 [[menu.topbar]]

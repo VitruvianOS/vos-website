@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "headers.html" . }}
+    {{ partial "custom_headers.html" . }}
+  </head>
+  <body class="single single-{{ .Type }}">
+    <div id="all">
+      {{ partial "top.html" . }}
+      {{ partial "nav.html" . }}
+
+      <main class="ur-bar ur-bar--white">
+        <article class="ur-wrap ur-article">
+          <header class="ur-article__header">
+            {{ with (index .Params.categories 0) }}<a class="ur-article__cat" href="{{ printf "/categories/%s" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}
+            <h1 class="ur-article__title">{{ .Title }}</h1>
+            <div class="ur-article__meta">
+              {{ if isset .Params "authors" }}
+                <span><i class="far fa-user" aria-hidden="true"></i>
+                  {{ range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}<a href="{{ printf "/authors/%s" ($a | urlize) | relURL }}">{{ $a }}</a>{{ end }}
+                </span>
+              {{ end }}
+              {{ with .Date }}<span><i class="far fa-calendar" aria-hidden="true"></i> {{ .Format $.Site.Params.date_format }}</span>{{ end }}
+              {{ with .ReadingTime }}<span><i class="far fa-clock" aria-hidden="true"></i> {{ . }} min</span>{{ end }}
+            </div>
+          </header>
+
+          {{ if isset .Params "banner" }}
+            <figure class="ur-article__banner">
+              <img src="{{ .Params.banner | relURL }}" alt="{{ default "" .Params.banner_alt }}" />
+              {{ with .Params.banner_caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+            </figure>
+          {{ end }}
+
+          <div class="ur-article__body">
+            {{ .Content }}
+          </div>
+
+          {{ if or (eq .Section "blog") (eq .Section "news") }}
+            {{ partial "share-buttons.html" . }}
+          {{ end }}
+
+          {{ if .Params.tags }}
+          <footer class="ur-article__footer">
+            <div class="ur-article__tags">
+              <span class="ur-article__tags-label">{{ i18n "tags" | default "Tags" }}</span>
+              {{ range .Params.tags }}
+                <a class="ur-tag" href="{{ printf "/tags/%s" (. | urlize) | relURL }}">{{ . }}</a>
+              {{ end }}
+            </div>
+          </footer>
+          {{ end }}
+
+          {{ if or .NextInSection .PrevInSection }}
+          <nav class="ur-article__pager">
+            {{ with .PrevInSection }}
+              <a class="ur-article__pager-prev" href="{{ .Permalink }}">
+                <span class="ur-mono">← {{ i18n "previous" | default "Previous" }}</span>
+                <span class="ur-article__pager-title">{{ .Title }}</span>
+              </a>
+            {{ end }}
+            {{ with .NextInSection }}
+              <a class="ur-article__pager-next" href="{{ .Permalink }}">
+                <span class="ur-mono">{{ i18n "next" | default "Next" }} →</span>
+                <span class="ur-article__pager-title">{{ .Title }}</span>
+              </a>
+            {{ end }}
+          </nav>
+          {{ end }}
+        </article>
+      </main>
+
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

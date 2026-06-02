@@ -1,0 +1,18 @@
+<div class="ur-share">
+  <span class="ur-share__label">{{ i18n "share" | default "Share" }}:</span>
+  <a class="ur-share__link" href="https://wa.me/?text={{ .Permalink }}" target="_blank" rel="noopener" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a class="ur-share__link" href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" target="_blank" rel="noopener" title="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a class="ur-share__link" href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title }}" target="_blank" rel="noopener" title="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a class="ur-share__link" href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener" title="Telegram">
+    <i class="fab fa-telegram-plane"></i>
+  </a>
+  <a class="ur-share__link" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener" title="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+</div>
