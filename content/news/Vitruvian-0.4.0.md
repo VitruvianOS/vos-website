@@ -15,7 +15,7 @@ A broad foundation release: better hardware support, a saner desktop session, an
 
 ### Display and input
 
-The graphics backend works on more GPUs and handles multi-seat hardware transitions cleanly. Keyboard input now uses the native Linux keymap system, so non-US layouts and special keys behave the way you'd expect.
+The graphics backend works on more GPUs and handles multi-seat hardware transitions cleanly. Keyboard input now uses the native Linux keymap system, so non-US layouts and special keys start to behave the way you'd expect.
 
 ### Storage and apps
 
