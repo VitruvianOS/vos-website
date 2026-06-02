@@ -7,7 +7,11 @@ type = "page"
 
 Vitruvian is developed by volunteers in their spare time. If you find the project useful and want to support its development, donations are welcome.
 
-Support VitruvianOS through **[GitHub Sponsors](https://github.com/sponsors/VitruvianOS)**.
+Support VitruvianOS through one of the following platforms:
+
+- **[GitHub Sponsors](https://github.com/sponsors/VitruvianOS)** — one-time or recurring donations
+- **[Open Collective](https://opencollective.com/vitruvian)** — we generally collect project expenses here (server costs, domain, build infrastructure)
+- **[Patreon](https://www.patreon.com/cw/VitruvianOS)** — premium access to private supporter chat, previews, early software, and more
 
 Other ways to help:
 
