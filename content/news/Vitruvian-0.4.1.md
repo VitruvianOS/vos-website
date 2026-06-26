@@ -16,7 +16,7 @@ Changelog
 * File opening through apps now works.
 * General improved stability of Tracker and Deskbar fs-related menus.
 * All problems with apps being stuck in Deskbar on quit are fixed.
-* Enabled Tracker Add-Ons and Replicants.
+* Enabled Tracker Add-Ons and Templates.
 * Implemented userland and kernel level mechanisms to ensure virtual references interoperability for inter app communication.
 * Add GLTeapot using mesa surfaceless backend, still buggy but will run and you can drag it. 
 * Fixed Tracker in navigation mode (going to be default next release).
