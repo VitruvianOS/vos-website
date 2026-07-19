@@ -7,7 +7,7 @@ authors = ["VitruvianOS Team"]
 +++
 
 This is the login and media release. 0.4.1 got the filesystem talking to
-Tracker; 0.5.0 gets the desktop talking to real users and starts wiring up
+Tracker. 0.5.0 gets the desktop talking to real users and starts wiring up
 a real audio pipeline.
 
 Changelog

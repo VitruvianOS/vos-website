@@ -30,7 +30,7 @@ The last reason is homogeneity: all four archs, amd64, arm64, arm32,
 riscv64, now use the same filesystem and the same image layout.
 
 This is just about the default. Full XFS and Btrfs support is still on the
-roadmap, tied to the DriveSetup rewrite; the current DriveSetup can't
+roadmap, tied to the DriveSetup rewrite. The current DriveSetup can't
 honestly offer more filesystems until it has a proper backend.
 
 
@@ -38,7 +38,7 @@ honestly offer more filesystems until it has a proper backend.
 
 `app_server` still draws in software. The GPU path is now getting real
 work, the DRM back end can allocate a GPU back buffer, and first light
-works. It isn't on by default; the cross-thread rendering context and the
+works. It isn't on by default. The cross-thread rendering context and the
 software fallback for when the driver refuses hardware acceleration still
 need attention.
 
@@ -65,7 +65,7 @@ What just landed:
 - The media2 sources and headers.
 - Game kit updates on top of media2 (BGameSound, BFileGameSound,
   BStreamingGameSound, BPushGameSound).
-- The `Sounds` preferences preflet. It's in the tree; whether it plays a
+- The `Sounds` preferences preflet. It's in the tree. Whether it plays a
   sound today depends on which corner of the pipeline you land in.
 - Build wiring for the PipeWire, SPA, and GStreamer dev packages.
 
