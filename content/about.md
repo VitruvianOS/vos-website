@@ -19,7 +19,7 @@ Custom-built kernel modules deliver a responsive, low-latency desktop experience
 
 ## Technical Foundation
 
-The reference boot filesystems are **XFS** and **SquashFS**, both with full extended attribute support. XFS for standard desktop installs, SquashFS for live images and embedded targets. Ext4 and most other Linux filesystems with extended attribute support also work. Filesystem indexing, live queries, and multiuser support with graphical login are on the roadmap.
+The default boot filesystem is **ext4**, with **SquashFS** for live images. Both support Linux extended attributes, which Vitruvian uses for BFS-style metadata. Full **XFS** and **Btrfs** support are on the roadmap, tied to the DriveSetup rewrite. Filesystem indexing, live queries, and multiuser support with graphical login are also on the roadmap.
 
 ### Nexus
 

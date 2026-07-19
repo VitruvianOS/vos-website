@@ -23,7 +23,7 @@ No. This should be implemented as a WINE-like layer, such as a runtime_loader po
 
 ## What filesystems are supported?
 
-The reference boot filesystems are XFS and SquashFS, both with full extended attribute support. XFS is used for standard desktop installs; SquashFS is used for live images and embedded targets. Vitruvian will also boot from ext4 and most other Linux filesystems with extended attribute support. Filesystem indexing and live queries are planned for a future release.
+The default boot filesystem is **ext4**, with **SquashFS** for live images. Both support Linux extended attributes, which Vitruvian uses to carry BFS-style metadata. Modern ext4 with `ea_inode` covers large-attribute needs without the tuning older setups required. Full **XFS** and **Btrfs** support are on the roadmap, tied to the DriveSetup rewrite. Filesystem indexing and live queries are also planned for a future release.
 
 ## Does it run on my hardware?
 
