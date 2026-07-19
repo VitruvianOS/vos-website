@@ -54,8 +54,8 @@ The kit builds and the plumbing is in place, but it isn't something you
 should count on for real audio work yet.
 
 The reason for the rewrite is that the legacy kit is built around a node
-graph and `media_addon_server`, which don't map cleanly onto Linux's audio
-stack. media2 keeps the parts of the API apps actually use, `BSoundPlayer`,
+graph and `media_addon_server`. media2 keeps the parts of the API apps
+actually use, `BSoundPlayer`,
 `BMediaFile`, `BMediaTrack`, `BMediaRecorder`, `BParameterWeb`, and
 reimplements them on top of PipeWire (for realtime audio) and GStreamer (for
 decode, encode, and format handling). Apps don't touch either directly.
