@@ -38,12 +38,6 @@ pluralizelisttitles = false
     weight     = 3
 
 [[menu.main]]
-    name       = "Releases"
-    identifier = "menu.releases"
-    url        = "/releases/"
-    weight     = 4
-
-[[menu.main]]
     name       = "Download"
     identifier = "menu.download"
     url        = "/download/"
@@ -98,7 +92,7 @@ pluralizelisttitles = false
     viewMorePostLink = "/blog/"
     author = "wdr"
     defaultKeywords = ["haiku", "linux", "vos"]
-    mainSections = ["blog", "news", "releases"]
+    mainSections = ["blog", "news"]
     defaultDescription = "Vitruvian is the human-centric Operating System."
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
