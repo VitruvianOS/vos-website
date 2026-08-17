@@ -50,8 +50,8 @@ Changelog
 
 | Architecture | ISO | Raw |
 |-------------|-----|-----|
-| **amd64** | [Vitruvian-0.6.0-amd64.iso](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.0/Vitruvian-0.6.0-amd64.iso) | [Vitruvian-0.6.0-amd64.raw](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.0/Vitruvian-0.6.0-amd64.raw) |
-| **arm64** | [Vitruvian-0.6.0-arm64.iso](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.0/Vitruvian-0.6.0-arm64.iso) | [Vitruvian-0.6.0-arm64.raw](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.0/Vitruvian-0.6.0-arm64.raw) |
+| **amd64** | [vitruvian-0.6.0-amd64.iso](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.0/vitruvian-0.6.0-amd64.iso) | [vitruvian-0.6.0-amd64.raw.zst](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.0/vitruvian-0.6.0-amd64.raw.zst) |
+| **arm64** | [vitruvian-0.6.0-arm64.iso](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.0/vitruvian-0.6.0-arm64.iso) | [vitruvian-0.6.0-arm64.raw.zst](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.0/vitruvian-0.6.0-arm64.raw.zst) |
 
 [GitHub release page](https://github.com/VitruvianOS/Vitruvian/releases/tag/0.6.0)
 
