@@ -2,7 +2,7 @@
 title = "VitruvianOS 0.6.0"
 date = "2026-08-17T00:00:00+00:00"
 categories = ["announcement"]
-tags = ["release", "news", "0.6.0", "0.6.1"]
+tags = ["release", "news", "0.6.0", "0.6.1", "0.6.2"]
 authors = ["VitruvianOS Team"]
 banner = "screenshots/0.6.0.jpeg"
 +++
@@ -48,13 +48,13 @@ Changelog
 
 ## Downloads
 
-UPDATE: 0.6.1 now available
+UPDATE: 0.6.2 now available
 
 | Architecture | ISO | Raw |
 |-------------|-----|-----|
-| **amd64** | [vitruvian-0.6.1-amd64.iso](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.1/vitruvian-0.6.1-amd64.iso) | [vitruvian-0.6.1-amd64.raw.zst](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.1/vitruvian-0.6.1-amd64.raw.zst) |
-| **arm64** | [vitruvian-0.6.1-arm64.iso](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.1/vitruvian-0.6.1-arm64.iso) | [vitruvian-0.6.1-arm64.raw.zst](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.1/vitruvian-0.6.1-arm64.raw.zst) |
+| **amd64** | [vitruvian-0.6.2-amd64.iso](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.2/vitruvian-0.6.2-amd64.iso) | [vitruvian-0.6.2-amd64.raw.zst](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.2/vitruvian-0.6.2-amd64.raw.zst) |
+| **arm64** | [vitruvian-0.6.2-arm64.iso](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.2/vitruvian-0.6.2-arm64.iso) | [vitruvian-0.6.2-arm64.raw.zst](https://github.com/VitruvianOS/Vitruvian/releases/download/0.6.2/vitruvian-0.6.2-arm64.raw.zst) |
 
-[GitHub release page](https://github.com/VitruvianOS/Vitruvian/releases/tag/0.6.1)
+[GitHub release page](https://github.com/VitruvianOS/Vitruvian/releases/tag/0.6.2)
 
 Visit [our Donate page](https://v-os.dev/donate/) if you want to help us.
